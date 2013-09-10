@@ -1,0 +1,4 @@
+exclude: ["_scss", "_resources", "_drafts"]
+name: 'working on it'
+markdown: redcarpet
+pygments: true
