@@ -1,0 +1,26 @@
+---
+layout: notes
+title: Notes
+---
+
+<ul class="posts__list">
+  {% for post in site.categories.notes %}
+  <li>
+    <a class="link-to-post" href="{{ post.url }}">
+      <h2>{{ post.title }}</h2>
+      <small class="post__meta">on
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {% assign m = post.date | date: "%B" %}
+          {% case m %}
+          {% when 'May' or 'June' or 'July' %}{{ m }}
+          {% when 'September' %}Sept.
+          {% else %}{{ post.date | date: "%b" }}.
+          {% endcase %}
+          {{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}
+        </time>
+      </small>
+      <p class="post-description">{{ post.description }}</p>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

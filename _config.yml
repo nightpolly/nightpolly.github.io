@@ -1,4 +1,5 @@
 exclude: ["_scss", "_resources", "_drafts"]
-name: 'working on it'
+name: nightpolly.com
 markdown: redcarpet
+permalink: /:categories/:title
 pygments: true
