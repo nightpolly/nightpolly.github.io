@@ -1,33 +1,41 @@
 ---
-layout: hi
-title: Hi.
+layout: home
+title: home
 ---
 
-<main role="main">
-  <h1>Hi.</h1>
-  <p>My name is Polly, I’m a designer and front-end developer. I come here to write. You can also find me on <a href="http://twitter.com/NightPolly">Twitter</a>.</p>
-  <p>This website is powered by Jekyll and hosted by Github. It also doesn’t have any styles yet.</p>
+<ul class="ptsList">
+  {% for post in paginator.posts %}
+  <li class="post">
+    <h2 class="post_title perfect4th">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    <small class="post_meta minor2nd-i">on <time class="post_date" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ post.date | date: "%b" }}. {% endcase %}{{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}</time> in <a class="post_category" href="/{{ post.category }}">{{ post.category }}</a></small>
+    {% if post.description %}
+    <p class="post_description major2nd">{{ post.description }}</p>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
 
-  <ul class="posts__list">
-    <h2>Recent posts</h2>
-    {% for post in site.posts %}
-    <li>
-      <a class="link-to-post" href="{{ post.url }}">
-        <h2>{{ post.title }}</h2>
-        <small class="post__meta">on
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {% assign m = post.date | date: "%B" %}
-            {% case m %}
-            {% when 'May' or 'June' or 'July' %}{{ m }}
-            {% when 'September' %}Sept.
-            {% else %}{{ post.date | date: "%b" }}.
-            {% endcase %}
-            {{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}
-          </time>
-        </small>
-        <p class="post-description">{{ post.description }}</p>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</main>
+<div class="contentRelated">
+  <span class="posts_pgNumber">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+  <div class="posts_pgLinks">
+    {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+    <a class="posts_pgLink prev" href="/">previous</a>
+    {% else %}
+    <a class="posts_pgLink prev" href="{{ paginator.previous_page_path }}">previous</a>
+    {% endif %}
+    {% else %}
+    <span class="posts_pgLink prev">previous</span>
+    {% endif %}
+
+    {% if paginator.next_page %}
+    <a class="posts_pgLink next" href="{{ paginator.next_page_path }}">next</a>
+    {% else %}
+    <span class="posts_pgLink next">next</span>
+    {% endif %}
+  </div>
+</div>
+

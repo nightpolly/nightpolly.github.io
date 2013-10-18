@@ -1,9 +1,0 @@
-<time datetime="{{ page.date | date_to_xmlschema }}">
-  {% assign m = page.date | date: "%B" %}
-  {% case m %}
-  {% when 'May' or 'June' or 'July' %}{{ m }}
-  {% when 'September' %}Sept.
-  {% else %}{{ page.date | date: "%b" }}.
-  {% endcase %}
-  {{ page.date | date: "%d" | plus:'0' }}, {{ page.date | date: "%Y" }}
-</time>
