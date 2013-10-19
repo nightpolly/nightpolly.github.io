@@ -189,9 +189,7 @@ table {
   font-style: normal; }
 
 html {
-  font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
-  line-height: 1.68;
+  font: 100%/1.68 "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   min-height: 100%; }
 
 body {
@@ -257,20 +255,18 @@ a {
   max-width: 810px;
   max-width: 50.625rem;
   margin: 0 auto;
-  padding: 3.36em 2.016em;
-  font-size: 14px;
-  font-size: 0.875rem; }
+  padding: 2.52em 0.84em;
+  font-size: 15px;
+  font-size: 0.9375rem; }
   @media all and (min-width: 34em) {
     .container {
       width: 90%;
-      padding-left: 2.52em;
-      padding-right: 2.52em; } }
+      padding-top: 3.36em;
+      padding-bottom: 3.36em; } }
   @media all and (min-width: 45em) {
     .container {
       padding-left: 2.856em;
-      padding-right: 2.856em;
-      font-size: 15px;
-      font-size: 0.9375rem; } }
+      padding-right: 2.856em; } }
   @media all and (min-width: 54em) {
     .container {
       padding-left: 3.864em;
@@ -283,17 +279,18 @@ a {
   position: relative;
   border-bottom: 1px solid #e5e3de;
   border-radius: 4px; }
-
-.pgHeader:before {
-  position: absolute;
-  display: block;
-  width: 2em;
-  bottom: -0.5em;
-  margin: 0 auto;
-  background-color: #f5f4f2;
-  font: 2.8em/1 'nighticons';
-  color: #e5e3de;
-  text-align: center; }
+  .pgHeader:before {
+    position: absolute;
+    display: block;
+    width: 2em;
+    bottom: -0.5em;
+    background-color: #f5f4f2;
+    font: 2.4em/1 'nighticons';
+    color: #e5e3de;
+    text-align: center; }
+    @media all and (min-width: 54em) {
+      .pgHeader:before {
+        font-size: 2.8em; } }
 
 .pgHeader-home:before {
   content: "\e000"; }
@@ -324,16 +321,10 @@ a {
 
 /* === Navigations === */
 .nav-secondary {
-  margin-bottom: 47.04px;
-  margin-bottom: 2.94rem; }
-  @media all and (min-width: 45em) {
+  margin-bottom: 2.52em; }
+  @media all and (min-width: 34em) {
     .nav-secondary {
-      margin-bottom: 50.4px;
-      margin-bottom: 3.15rem; } }
-  @media all and (min-width: 54em) {
-    .nav-secondary {
-      margin-bottom: 57.12px;
-      margin-bottom: 3.57rem; } }
+      margin-bottom: 3.36em; } }
 
 .nav_list {
   margin: 0;
@@ -377,7 +368,7 @@ a {
       line-height: 1.54; } }
   @media all and (min-width: 54em) {
     .nav-secondary_item {
-      padding: 0 0.7em; } }
+      padding: 0 0.6em; } }
 
 .nav_link {
   border: 0; }
@@ -388,11 +379,10 @@ a {
   -moz-transition: color 0.2s ease;
   -o-transition: color 0.2s ease;
   transition: color 0.2s ease; }
-  @media all and (min-width: 45em) {
+  @media all and (min-width: 54em) {
     .nav-secondary .icon {
       display: block;
-      font-size: 36px;
-      font-size: 2.25rem; } }
+      font-size: 2.4em; } }
 
 .nav-secondary_list:hover .icon {
   color: #dfdcd5; }
@@ -405,15 +395,11 @@ a {
 
 .contentRelated {
   overflow: hidden;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   color: #4a8493; }
-  @media all and (min-width: 45em) {
-    .contentRelated {
-      font-size: 14px;
-      font-size: 0.875rem; } }
-  @media all and (min-width: 45em) {
+  @media all and (min-width: 54em) {
     .contentRelated {
       font-size: 15px;
       font-size: 0.9375rem; } }
@@ -435,22 +421,16 @@ a {
 
 /* === Navigations === */
 .nav-breadcrumb {
-  margin-bottom: 14px;
-  margin-bottom: 0.875rem; }
-  @media all and (min-width: 45em) {
-    .nav-breadcrumb {
-      margin-bottom: 15px;
-      margin-bottom: 0.9375rem; } }
+  margin-bottom: 25.2px;
+  margin-bottom: 1.575rem; }
   @media all and (min-width: 54em) {
     .nav-breadcrumb {
-      margin-bottom: 17px;
-      margin-bottom: 1.0625rem; } }
+      margin-bottom: 28.56px;
+      margin-bottom: 1.785rem; } }
 
 .nav-breadcrumb_item {
   display: inline;
-  font-family: "Merriweather", Georgia, Times, serif;
-  text-transform: uppercase;
-  color: #28474f; }
+  font-family: "Merriweather", Georgia, Times, serif; }
   .nav-breadcrumb_item:after {
     content: "\00A0 \/";
     font-weight: 300;
@@ -466,67 +446,49 @@ a {
   border-bottom: 1px solid #e5e3de;
   border-radius: 4px; }
 
-.post_section {
-  margin-bottom: 47.04px;
-  margin-bottom: 2.94rem; }
-  @media all and (min-width: 45em) {
-    .post_section {
-      margin-bottom: 50.4px;
-      margin-bottom: 3.15rem; } }
-  @media all and (min-width: 54em) {
-    .post_section {
-      margin-bottom: 57.12px;
-      margin-bottom: 3.57rem; } }
+.post_section-header {
+  margin-bottom: 2.52em; }
+  @media all and (min-width: 34em) {
+    .post_section-header {
+      margin-bottom: 3.36em; } }
 
 .post_section-entry {
   position: relative;
-  margin-bottom: 94.08px;
-  margin-bottom: 5.88rem; }
-  @media all and (min-width: 45em) {
+  margin-bottom: 5.04em; }
+  .post_section-entry:after {
+    content: "\00d7 \00A0 \00d7 \00A0 \00d7";
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: -5.04em;
+    left: 0;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 5.04em;
+    text-align: center;
+    color: #dfdcd5; }
+    @media all and (min-width: 34em) {
+      .post_section-entry:after {
+        bottom: -6.72em;
+        line-height: 6.72em; } }
+  @media all and (min-width: 34em) {
     .post_section-entry {
-      margin-bottom: 100.8px;
-      margin-bottom: 6.3rem; } }
-  @media all and (min-width: 54em) {
-    .post_section-entry {
-      margin-bottom: 114.24px;
-      margin-bottom: 7.14rem; } }
-
-.post_section-entry:after {
-  content: "\00d7 \00A0 \00d7 \00A0 \00d7";
-  position: absolute;
-  display: block;
-  width: 100%;
-  bottom: -6.72em;
-  left: 0;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: 300;
-  line-height: 6.72em;
-  text-align: center;
-  color: #dfdcd5; }
-  @media all and (min-width: 45em) {
-    .post_section-entry:after {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
-  @media all and (min-width: 54em) {
-    .post_section-entry:after {
-      font-size: 17px;
-      font-size: 1.0625rem; } }
+      margin-bottom: 6.72em; } }
 
 .post_title {
-  margin: 0 0 23.52px;
-  margin: 0 0 1.47rem;
+  margin: 0 0 12.6px;
+  margin: 0 0 0.7875rem;
   font-weight: 400;
   line-height: 1.2;
   color: #28474f; }
-  @media all and (min-width: 45em) {
+  @media all and (min-width: 34em) {
     .post_title {
-      margin: 0 0 25.2px;
-      margin: 0 0 1.575rem; } }
+      margin-bottom: 25.2px;
+      margin-bottom: 1.575rem; } }
   @media all and (min-width: 54em) {
     .post_title {
-      margin: 0 0 28.56px;
-      margin: 0 0 1.785rem; } }
+      margin-bottom: 28.56px;
+      margin-bottom: 1.785rem; } }
 
 .post_subtitle {
   display: block;
@@ -536,33 +498,29 @@ a {
   color: #4a8493; }
 
 .post_heading {
-  margin: 47.04px 0 23.52px;
-  margin: 2.94rem 0 1.47rem; }
-  @media all and (min-width: 45em) {
+  margin: 25.2px 0;
+  margin: 1.575rem 0; }
+  @media all and (min-width: 34em) {
     .post_heading {
-      margin: 50.4px 0 25.2px;
-      margin: 3.15rem 0 1.575rem; } }
+      margin-top: 50.4px;
+      margin-top: 3.15rem; } }
   @media all and (min-width: 54em) {
     .post_heading {
-      margin: 57.12px 0 28.56px;
-      margin: 3.57rem 0 1.785rem; } }
+      margin-top: 57.12px;
+      margin-top: 3.57rem;
+      margin-bottom: 28.56px;
+      margin-bottom: 1.785rem; } }
 
-.post_heading.major2nd-i {
+.post_heading.major2i {
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.1em; }
+  letter-spacing: 0.04em; }
 
 .post p,
 .post_block,
 .highlight {
-  margin: 23.52px 0;
-  margin: 1.47rem 0; }
-  @media all and (min-width: 45em) {
-    .post p,
-    .post_block,
-    .highlight {
-      margin: 25.2px 0;
-      margin: 1.575rem 0; } }
+  margin: 25.2px 0;
+  margin: 1.575rem 0; }
   @media all and (min-width: 54em) {
     .post p,
     .post_block,
@@ -582,20 +540,13 @@ a {
     content: "\203b";
     position: absolute;
     right: 100%;
-    padding-right: 7px;
-    padding-right: 0.4375rem;
-    font-size: 1.68em;
-    font-style: normal;
-    line-height: 1;
+    padding-right: 0.4em;
+    font: 1.2em/1.2 normal;
     color: #beb38b; }
-    @media all and (min-width: 45em) {
-      .post_note:before {
-        padding-right: 7.5px;
-        padding-right: 0.46875rem; } }
     @media all and (min-width: 54em) {
       .post_note:before {
-        padding-right: 8.5px;
-        padding-right: 0.53125rem; } }
+        font-size: 1.68em;
+        line-height: 1; } }
   .post_note > em, .post_note > cite {
     font-style: normal; }
 
@@ -607,18 +558,8 @@ a {
       content: "\2022";
       position: absolute;
       right: 100%;
-      padding-right: 7px;
-      padding-right: 0.4375rem;
-      line-height: inherit;
+      padding-right: 0.4em;
       color: #beb38b; }
-      @media all and (min-width: 45em) {
-        .post_list > li:before {
-          padding-right: 7.5px;
-          padding-right: 0.46875rem; } }
-      @media all and (min-width: 54em) {
-        .post_list > li:before {
-          padding-right: 8.5px;
-          padding-right: 0.53125rem; } }
 
 .post_list-ordered {
   counter-reset: item; }
@@ -626,99 +567,47 @@ a {
     content: counter(item) ".";
     counter-increment: item; }
 
-.figure_content {
-  margin: 14px 0;
-  margin: 0.875rem 0; }
-  @media all and (min-width: 45em) {
-    .figure_content {
-      margin: 15px 0;
-      margin: 0.9375rem 0; } }
+.post_figure-quote {
+  position: relative;
+  padding-left: 1.68em; }
+  .post_figure-quote:before {
+    content: "\201C";
+    position: absolute;
+    top: 0;
+    font: 700 2.52em/1 "Merriweather", Georgia, Times, serif;
+    text-indent: -0.8em;
+    color: #beb38b; }
+    @media all and (min-width: 54em) {
+      .post_figure-quote:before {
+        font-size: 3.36em; } }
+  @media all and (min-width: 34em) {
+    .post_figure-quote {
+      padding-left: 3.36em; } }
   @media all and (min-width: 54em) {
-    .figure_content {
-      margin: 17px 0;
-      margin: 1.0625rem 0; } }
+    .post_figure-quote {
+      padding-left: 5.04em; } }
+
+.figure_content {
+  margin: 1em 0; }
 
 .figure_content-quote {
-  position: relative;
-  padding-left: 36px;
-  padding-left: 2.25rem;
-  font-size: 17px;
-  font-size: 1.0625rem;
   font-weight: 300;
   font-style: italic;
   line-height: 1.56;
   color: #4a8493; }
   .figure_content-quote > p {
     margin: 0.5em 0; }
-  .figure_content-quote:before {
-    content: "\201C";
-    position: absolute;
-    display: block;
-    width: 36px;
-    width: 2.25rem;
-    top: 0;
-    left: 0;
-    font-size: 36px;
-    font-size: 2.25rem;
-    font-weight: 700;
-    font-style: normal;
-    line-height: 1;
-    text-align: center;
-    color: #beb38b; }
-  @media all and (min-width: 45em) {
-    .figure_content-quote {
-      padding-left: 84px;
-      padding-left: 5.25rem;
-      font-size: 18px;
-      font-size: 1.125rem; }
-      .figure_content-quote:before {
-        width: 84px;
-        width: 5.25rem;
-        left: 0.5em;
-        font-size: 42px;
-        font-size: 2.625rem; } }
-  @media all and (min-width: 54em) {
-    .figure_content-quote {
-      padding-left: 90px;
-      padding-left: 5.625rem;
-      font-size: 21px;
-      font-size: 1.3125rem; }
-      .figure_content-quote:before {
-        width: 90px;
-        width: 5.625rem;
-        font-size: 45px;
-        font-size: 2.8125rem; } }
 
 .figure_content-image {
   display: block; }
 
 .figure_info {
-  font-size: 12px;
-  font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.56;
   color: #beb38b; }
-  @media all and (min-width: 45em) {
-    .figure_info {
-      font-size: 14px;
-      font-size: 0.875rem; } }
-  @media all and (min-width: 54em) {
-    .figure_info {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
 
 .figure_info-quote {
-  padding-left: 36px;
-  padding-left: 2.25rem;
   text-indent: -1em; }
-  @media all and (min-width: 45em) {
-    .figure_info-quote {
-      padding-left: 84px;
-      padding-left: 5.25rem; } }
-  @media all and (min-width: 54em) {
-    .figure_info-quote {
-      padding-left: 90px;
-      padding-left: 5.625rem; } }
 
 .post {
   font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -731,14 +620,11 @@ a {
   font-family: "Merriweather", Georgia, Times, serif; }
 
 .highlight > pre {
-  padding: 14px;
-  padding: 0.875rem;
+  padding: 0.7em 1em;
   background-color: #28474f;
   border-radius: 4px;
-  font-family: "Anonymous Pro", monospace;
   font-size: 14px;
   font-size: 0.875rem;
-  font-style: normal;
   color: #f5f4f2;
   overflow: auto;
   white-space: pre;
@@ -746,107 +632,117 @@ a {
   overflow-wrap: normal; }
   @media all and (min-width: 54em) {
     .highlight > pre {
+      padding: 0.9em 1.2em;
       font-size: 15px;
       font-size: 0.9375rem; } }
-  @media all and (min-width: 45em) {
-    .highlight > pre {
-      padding: 15px;
-      padding: 0.9375rem; } }
+
+code {
+  font-family: "Anonymous Pro", monospace;
+  font-style: normal; }
 
 /* === ♪ ♫ ♪ === */
-.major2nd-i {
-  font-size: 11px;
-  font-size: 0.6875rem; }
-  @media all and (min-width: 45em) {
-    .major2nd-i {
-      font-size: 12px;
-      font-size: 0.75rem; } }
+.major2i,
+.copyright {
+  font-size: 12px;
+  font-size: 0.75rem; }
   @media all and (min-width: 54em) {
-    .major2nd-i {
+    .major2i,
+    .copyright {
       font-size: 14px;
       font-size: 0.875rem; } }
 
-.minor2nd-i {
-  font-size: 12px;
-  font-size: 0.75rem; }
-  @media all and (min-width: 45em) {
-    .minor2nd-i {
-      font-size: 14px;
-      font-size: 0.875rem; } }
+.minor2i,
+.post_meta,
+.post_note,
+.figure_info,
+.pgDescription,
+.nav-secondary_list {
+  font-size: 14px;
+  font-size: 0.875rem; }
   @media all and (min-width: 54em) {
-    .minor2nd-i {
+    .minor2i,
+    .post_meta,
+    .post_note,
+    .figure_info,
+    .pgDescription,
+    .nav-secondary_list {
       font-size: 15px;
       font-size: 0.9375rem; } }
 
 .prime {
-  font-size: 14px;
-  font-size: 0.875rem; }
-  @media all and (min-width: 45em) {
-    .prime {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
+  font-size: 15px;
+  font-size: 0.9375rem; }
   @media all and (min-width: 54em) {
     .prime {
       font-size: 17px;
       font-size: 1.0625rem; } }
 
-.minor2nd {
-  font-size: 15px;
-  font-size: 0.9375rem; }
-  @media all and (min-width: 45em) {
-    .minor2nd {
-      font-size: 17px;
-      font-size: 1.0625rem; } }
+.minor2 {
+  font-size: 17px;
+  font-size: 1.0625rem; }
   @media all and (min-width: 54em) {
-    .minor2nd {
+    .minor2 {
       font-size: 18px;
       font-size: 1.125rem; } }
 
-.major2nd {
+.major2,
+.post_lede,
+.figure_content-quote,
+.post_description {
   font-size: 17px;
   font-size: 1.0625rem; }
   @media all and (min-width: 45em) {
-    .major2nd {
+    .major2,
+    .post_lede,
+    .figure_content-quote,
+    .post_description {
       font-size: 18px;
       font-size: 1.125rem; } }
   @media all and (min-width: 54em) {
-    .major2nd {
+    .major2,
+    .post_lede,
+    .figure_content-quote,
+    .post_description {
       font-size: 21px;
       font-size: 1.3125rem; } }
 
-.minor3rd {
+.minor3 {
   font-size: 18px;
   font-size: 1.125rem; }
   @media all and (min-width: 45em) {
-    .minor3rd {
+    .minor3 {
       font-size: 21px;
       font-size: 1.3125rem; } }
   @media all and (min-width: 54em) {
-    .minor3rd {
+    .minor3 {
       font-size: 23px;
       font-size: 1.4375rem; } }
 
-.major3rd {
+.major3 {
   font-size: 21px;
   font-size: 1.3125rem; }
   @media all and (min-width: 45em) {
-    .major3rd {
+    .major3 {
       font-size: 23px;
       font-size: 1.4375rem; } }
   @media all and (min-width: 54em) {
-    .major3rd {
+    .major3 {
       font-size: 27px;
       font-size: 1.6875rem; } }
 
-.perfect4th {
-  font-size: 23px;
-  font-size: 1.4375rem; }
+.perfect4 {
+  font-size: 21px;
+  font-size: 1.3125rem; }
+  @media all and (min-width: 34em) {
+    .perfect4 {
+      font-size: 23px;
+      font-size: 1.4375rem; } }
   @media all and (min-width: 45em) {
-    .perfect4th {
+    .perfect4 {
       font-size: 27px;
       font-size: 1.6875rem; } }
   @media all and (min-width: 54em) {
-    .perfect4th {
+    .perfect4 {
       font-size: 29px;
       font-size: 1.8125rem; } }
 
@@ -862,39 +758,43 @@ a {
       font-size: 33px;
       font-size: 2.0625rem; } }
 
-.perfect5th {
+.perfect5 {
   font-size: 29px;
   font-size: 1.8125rem; }
   @media all and (min-width: 45em) {
-    .perfect5th {
+    .perfect5 {
       font-size: 33px;
       font-size: 2.0625rem; } }
   @media all and (min-width: 54em) {
-    .perfect5th {
+    .perfect5 {
       font-size: 36px;
       font-size: 2.25rem; } }
 
-.minor6th {
+.minor6 {
   font-size: 33px;
   font-size: 2.0625rem; }
   @media all and (min-width: 45em) {
-    .minor6th {
+    .minor6 {
       font-size: 36px;
       font-size: 2.25rem; } }
   @media all and (min-width: 54em) {
-    .minor6th {
+    .minor6 {
       font-size: 42px;
       font-size: 2.625rem; } }
 
-.major6th {
-  font-size: 36px;
-  font-size: 2.25rem; }
+.major6 {
+  font-size: 33px;
+  font-size: 2.0625rem; }
+  @media all and (min-width: 34em) {
+    .major6 {
+      font-size: 36px;
+      font-size: 2.25rem; } }
   @media all and (min-width: 45em) {
-    .major6th {
+    .major6 {
       font-size: 42px;
       font-size: 2.625rem; } }
   @media all and (min-width: 54em) {
-    .major6th {
+    .major6 {
       font-size: 45px;
       font-size: 2.8125rem; } }
 

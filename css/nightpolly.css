@@ -189,9 +189,7 @@ table {
   font-style: normal; }
 
 html {
-  font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
-  line-height: 1.68;
+  font: 100%/1.68 "Merriweather Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   min-height: 100%; }
 
 body {
@@ -257,20 +255,18 @@ a {
   max-width: 810px;
   max-width: 50.625rem;
   margin: 0 auto;
-  padding: 3.36em 2.016em;
-  font-size: 14px;
-  font-size: 0.875rem; }
+  padding: 2.52em 0.84em;
+  font-size: 15px;
+  font-size: 0.9375rem; }
   @media all and (min-width: 34em) {
     .container {
       width: 90%;
-      padding-left: 2.52em;
-      padding-right: 2.52em; } }
+      padding-top: 3.36em;
+      padding-bottom: 3.36em; } }
   @media all and (min-width: 45em) {
     .container {
       padding-left: 2.856em;
-      padding-right: 2.856em;
-      font-size: 15px;
-      font-size: 0.9375rem; } }
+      padding-right: 2.856em; } }
   @media all and (min-width: 54em) {
     .container {
       padding-left: 3.864em;
@@ -283,17 +279,18 @@ a {
   position: relative;
   border-bottom: 1px solid #e5e3de;
   border-radius: 4px; }
-
-.pgHeader:before {
-  position: absolute;
-  display: block;
-  width: 2em;
-  bottom: -0.5em;
-  margin: 0 auto;
-  background-color: #f5f4f2;
-  font: 2.8em/1 'nighticons';
-  color: #e5e3de;
-  text-align: center; }
+  .pgHeader:before {
+    position: absolute;
+    display: block;
+    width: 2em;
+    bottom: -0.5em;
+    background-color: #f5f4f2;
+    font: 2.4em/1 'nighticons';
+    color: #e5e3de;
+    text-align: center; }
+    @media all and (min-width: 54em) {
+      .pgHeader:before {
+        font-size: 2.8em; } }
 
 .pgHeader-home:before {
   content: "\e000"; }
@@ -324,16 +321,10 @@ a {
 
 /* === Navigations === */
 .nav-secondary {
-  margin-bottom: 47.04px;
-  margin-bottom: 2.94rem; }
-  @media all and (min-width: 45em) {
+  margin-bottom: 2.52em; }
+  @media all and (min-width: 34em) {
     .nav-secondary {
-      margin-bottom: 50.4px;
-      margin-bottom: 3.15rem; } }
-  @media all and (min-width: 54em) {
-    .nav-secondary {
-      margin-bottom: 57.12px;
-      margin-bottom: 3.57rem; } }
+      margin-bottom: 3.36em; } }
 
 .nav_list {
   margin: 0;
@@ -377,7 +368,7 @@ a {
       line-height: 1.54; } }
   @media all and (min-width: 54em) {
     .nav-secondary_item {
-      padding: 0 0.7em; } }
+      padding: 0 0.6em; } }
 
 .nav_link {
   border: 0; }
@@ -388,11 +379,10 @@ a {
   -moz-transition: color 0.2s ease;
   -o-transition: color 0.2s ease;
   transition: color 0.2s ease; }
-  @media all and (min-width: 45em) {
+  @media all and (min-width: 54em) {
     .nav-secondary .icon {
       display: block;
-      font-size: 36px;
-      font-size: 2.25rem; } }
+      font-size: 2.4em; } }
 
 .nav-secondary_list:hover .icon {
   color: #dfdcd5; }
@@ -405,15 +395,11 @@ a {
 
 .contentRelated {
   overflow: hidden;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 300;
   color: #4a8493; }
-  @media all and (min-width: 45em) {
-    .contentRelated {
-      font-size: 14px;
-      font-size: 0.875rem; } }
-  @media all and (min-width: 45em) {
+  @media all and (min-width: 54em) {
     .contentRelated {
       font-size: 15px;
       font-size: 0.9375rem; } }
@@ -439,34 +425,21 @@ h1, h2, h3, h4, h5, h6 {
 /* === Navigations === */
 .nav-primary {
   position: relative;
-  margin-bottom: 23px;
-  margin-bottom: 1.4375rem; }
+  margin-bottom: 25.2px;
+  margin-bottom: 1.575rem; }
   .nav-primary:before {
     content: "\e003";
     position: absolute;
     top: 0;
     right: 100%;
-    padding-right: 7px;
-    padding-right: 0.4375rem;
+    padding-right: 0.4em;
     font-family: 'nighticons';
     line-height: inherit;
     color: #dfdcd5; }
-    @media all and (min-width: 45em) {
-      .nav-primary:before {
-        padding-right: 7.5px;
-        padding-right: 0.46875rem; } }
-    @media all and (min-width: 54em) {
-      .nav-primary:before {
-        padding-right: 8.5px;
-        padding-right: 0.53125rem; } }
-  @media all and (min-width: 45em) {
-    .nav-primary {
-      margin-bottom: 27px;
-      margin-bottom: 1.6875rem; } }
   @media all and (min-width: 54em) {
     .nav-primary {
-      margin-bottom: 29px;
-      margin-bottom: 1.8125rem; } }
+      margin-bottom: 28.56px;
+      margin-bottom: 1.785rem; } }
 
 .nav-primary_item {
   display: inline;
@@ -489,67 +462,46 @@ h1, h2, h3, h4, h5, h6 {
 .ptsList {
   position: relative;
   margin-top: 0;
-  margin-bottom: 94.08px;
-  margin-bottom: 5.88rem;
+  margin-bottom: 5.04em;
   list-style: none; }
-  @media all and (min-width: 45em) {
+  @media all and (min-width: 34em) {
     .ptsList {
-      margin-bottom: 100.8px;
-      margin-bottom: 6.3rem; } }
-  @media all and (min-width: 54em) {
-    .ptsList {
-      margin-bottom: 114.24px;
-      margin-bottom: 7.14rem; } }
+      margin-bottom: 6.72em; } }
 
 .ptsList:after {
   content: "\00d7 \00A0 \00d7 \00A0 \00d7";
   position: absolute;
   display: block;
   width: 100%;
-  bottom: -6.72em;
+  bottom: -5.04em;
   left: 0;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 1em;
   font-weight: 300;
-  line-height: 6.72em;
+  line-height: 5.04em;
   text-align: center;
   color: #dfdcd5; }
-  @media all and (min-width: 45em) {
+  @media all and (min-width: 34em) {
     .ptsList:after {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
-  @media all and (min-width: 54em) {
-    .ptsList:after {
-      font-size: 17px;
-      font-size: 1.0625rem; } }
+      bottom: -6.72em;
+      line-height: 6.72em; } }
 
 .post {
-  margin-bottom: 47.04px;
-  margin-bottom: 2.94rem; }
-  @media all and (min-width: 45em) {
+  margin-bottom: 2.52em; }
+  @media all and (min-width: 34em) {
     .post {
-      margin-bottom: 50.4px;
-      margin-bottom: 3.15rem; } }
-  @media all and (min-width: 54em) {
-    .post {
-      margin-bottom: 57.12px;
-      margin-bottom: 3.57rem; } }
+      margin-bottom: 3.36em; } }
 
 .post_title > a {
   display: block;
   border: 0; }
 
 .post_meta {
-  margin-bottom: 23px;
-  margin-bottom: 1.4375rem; }
-  @media all and (min-width: 45em) {
-    .post_meta {
-      margin-bottom: 27px;
-      margin-bottom: 1.6875rem; } }
+  margin-bottom: 25.2px;
+  margin-bottom: 1.575rem; }
   @media all and (min-width: 54em) {
     .post_meta {
-      margin-bottom: 29px;
-      margin-bottom: 1.8125rem; } }
+      margin-bottom: 28.56px;
+      margin-bottom: 1.785rem; } }
 
 .post_description {
   margin: 0;
@@ -584,99 +536,108 @@ h1, h2, h3, h4, h5, h6,
   font-family: "Merriweather", Georgia, Times, serif; }
 
 /* === ♪ ♫ ♪ === */
-.major2nd-i {
-  font-size: 11px;
-  font-size: 0.6875rem; }
-  @media all and (min-width: 45em) {
-    .major2nd-i {
-      font-size: 12px;
-      font-size: 0.75rem; } }
+.major2i,
+.copyright {
+  font-size: 12px;
+  font-size: 0.75rem; }
   @media all and (min-width: 54em) {
-    .major2nd-i {
+    .major2i,
+    .copyright {
       font-size: 14px;
       font-size: 0.875rem; } }
 
-.minor2nd-i {
-  font-size: 12px;
-  font-size: 0.75rem; }
-  @media all and (min-width: 45em) {
-    .minor2nd-i {
-      font-size: 14px;
-      font-size: 0.875rem; } }
+.minor2i,
+.post_meta,
+.post_note,
+.figure_info,
+.pgDescription,
+.nav-secondary_list {
+  font-size: 14px;
+  font-size: 0.875rem; }
   @media all and (min-width: 54em) {
-    .minor2nd-i {
+    .minor2i,
+    .post_meta,
+    .post_note,
+    .figure_info,
+    .pgDescription,
+    .nav-secondary_list {
       font-size: 15px;
       font-size: 0.9375rem; } }
 
 .prime {
-  font-size: 14px;
-  font-size: 0.875rem; }
-  @media all and (min-width: 45em) {
-    .prime {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
+  font-size: 15px;
+  font-size: 0.9375rem; }
   @media all and (min-width: 54em) {
     .prime {
       font-size: 17px;
       font-size: 1.0625rem; } }
 
-.minor2nd {
-  font-size: 15px;
-  font-size: 0.9375rem; }
-  @media all and (min-width: 45em) {
-    .minor2nd {
-      font-size: 17px;
-      font-size: 1.0625rem; } }
+.minor2 {
+  font-size: 17px;
+  font-size: 1.0625rem; }
   @media all and (min-width: 54em) {
-    .minor2nd {
+    .minor2 {
       font-size: 18px;
       font-size: 1.125rem; } }
 
-.major2nd {
+.major2,
+.post_lede,
+.figure_content-quote,
+.post_description {
   font-size: 17px;
   font-size: 1.0625rem; }
   @media all and (min-width: 45em) {
-    .major2nd {
+    .major2,
+    .post_lede,
+    .figure_content-quote,
+    .post_description {
       font-size: 18px;
       font-size: 1.125rem; } }
   @media all and (min-width: 54em) {
-    .major2nd {
+    .major2,
+    .post_lede,
+    .figure_content-quote,
+    .post_description {
       font-size: 21px;
       font-size: 1.3125rem; } }
 
-.minor3rd {
+.minor3 {
   font-size: 18px;
   font-size: 1.125rem; }
   @media all and (min-width: 45em) {
-    .minor3rd {
+    .minor3 {
       font-size: 21px;
       font-size: 1.3125rem; } }
   @media all and (min-width: 54em) {
-    .minor3rd {
+    .minor3 {
       font-size: 23px;
       font-size: 1.4375rem; } }
 
-.major3rd {
+.major3 {
   font-size: 21px;
   font-size: 1.3125rem; }
   @media all and (min-width: 45em) {
-    .major3rd {
+    .major3 {
       font-size: 23px;
       font-size: 1.4375rem; } }
   @media all and (min-width: 54em) {
-    .major3rd {
+    .major3 {
       font-size: 27px;
       font-size: 1.6875rem; } }
 
-.perfect4th {
-  font-size: 23px;
-  font-size: 1.4375rem; }
+.perfect4 {
+  font-size: 21px;
+  font-size: 1.3125rem; }
+  @media all and (min-width: 34em) {
+    .perfect4 {
+      font-size: 23px;
+      font-size: 1.4375rem; } }
   @media all and (min-width: 45em) {
-    .perfect4th {
+    .perfect4 {
       font-size: 27px;
       font-size: 1.6875rem; } }
   @media all and (min-width: 54em) {
-    .perfect4th {
+    .perfect4 {
       font-size: 29px;
       font-size: 1.8125rem; } }
 
@@ -692,38 +653,42 @@ h1, h2, h3, h4, h5, h6,
       font-size: 33px;
       font-size: 2.0625rem; } }
 
-.perfect5th {
+.perfect5 {
   font-size: 29px;
   font-size: 1.8125rem; }
   @media all and (min-width: 45em) {
-    .perfect5th {
+    .perfect5 {
       font-size: 33px;
       font-size: 2.0625rem; } }
   @media all and (min-width: 54em) {
-    .perfect5th {
+    .perfect5 {
       font-size: 36px;
       font-size: 2.25rem; } }
 
-.minor6th {
+.minor6 {
   font-size: 33px;
   font-size: 2.0625rem; }
   @media all and (min-width: 45em) {
-    .minor6th {
+    .minor6 {
       font-size: 36px;
       font-size: 2.25rem; } }
   @media all and (min-width: 54em) {
-    .minor6th {
+    .minor6 {
       font-size: 42px;
       font-size: 2.625rem; } }
 
-.major6th {
-  font-size: 36px;
-  font-size: 2.25rem; }
+.major6 {
+  font-size: 33px;
+  font-size: 2.0625rem; }
+  @media all and (min-width: 34em) {
+    .major6 {
+      font-size: 36px;
+      font-size: 2.25rem; } }
   @media all and (min-width: 45em) {
-    .major6th {
+    .major6 {
       font-size: 42px;
       font-size: 2.625rem; } }
   @media all and (min-width: 54em) {
-    .major6th {
+    .major6 {
       font-size: 45px;
       font-size: 2.8125rem; } }
