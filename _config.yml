@@ -1,6 +1,0 @@
-exclude: ["_scss", "_resources", "_drafts", "Rakefile"]
-name: nightpolly.com
-markdown: redcarpet
-paginate: 5
-permalink: /:categories/:title
-pygments: true
