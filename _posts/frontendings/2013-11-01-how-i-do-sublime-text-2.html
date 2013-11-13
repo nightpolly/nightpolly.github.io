@@ -1,7 +1,7 @@
 ---
-layout: post-frontendings
-title:  How I Do Sublime Text 2
-date:   2013-11-01 14:27
+layout: post
+title: How I Do Sublime Text 2
+date: 2013-11-01 14:27
 category: frontendings
 description: My Sublime Text 2 setup&mdash;settings and installed packages.
 ---
@@ -24,6 +24,8 @@ description: My Sublime Text 2 setup&mdash;settings and installed packages.
   <p><a href="https://github.com/daylerees/colour-schemes" title="github.com/daylerees/colour-schemes">Dayle Rees Color Schemes</a> is a very popular collection of color schemes, and <a href="http://chriskempson.github.io/base16/" title="chriskempson.github.io/base16">base16</a> is worth a try, too. I also use <a href="https://github.com/sindresorhus/focus" title="github.com/sindresorhus/focus">Focus</a>, which is useful when you want to only concentrate on the content.</p>
   <h3 class="post_heading minor3">Power-coding</h3>
   <p><a href="http://emmet.io/" title="emmet.io">Emmet</a> is definitely worth checking out if you work with HTML and CSS. You can do many things with it, here’s just one quick example:</p>
+  <div class="post_code">
+    <p class="code_title">HTML</p>
 {% highlight html %}
 <!-- input -->
 section.main>(h1>a)+ul.contents>li*4>a{Part $}
@@ -39,19 +41,26 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
   </ul>
 </section>
 {% endhighlight %}
+  </div>
   <p><a href="http://livestyle.emmet.io/" title="livestyle.emmet.io">Emmet LiveStyle</a> allows you to edit CSS in Chrome DevTools (you’ll need also the <a href="https://chrome.google.com/webstore/detail/emmet-livestyle/diebikgmpmeppiilkaijjbdgciafajmg" title="Emmet LiveStyle in Chrome Web Store">extension for Chrome</a>), and have the changes show up in your file in Sublime Text. It’s kind of magical, this one.</p>
   <p><a href="https://github.com/rmaksim/Sublime-Text-2-Inc-Dec-Value" title="github.com/rmaksim/Sublime-Text-2-Inc-Dec-Value">Inc-Dec-Value</a>: use keyboard shortcuts to increase or decrease numbers, hex-codes, dates, change value to the opposite (true &harr; false), cycle through days of the week, month names, etc., turn a string into upper, lower, or capital case.</p>
   <h3 class="post_heading minor3">Additional syntaxes</h3>
   <p class="post_note">Sublime doesn’t have built-in support for <em>all</em> of the syntaxes out there. But if the one you want is missing, there’s a big chance someone has made a plugin for it.</p>
-  <p><a href="https://github.com/P233/Syntax-highlighting-for-Sass" title="github.com/P233/Syntax-highlighting-for-Sass">Syntax Highlighting for Sass</a> is the one I use for Sass and SCSS syntax highlighting. A similar package you can check out is <a href="https://github.com/nathos/sass-textmate-bundle" title="github.com/nathos/sass-textmate-bundle">Sass for TextMate / Sublime Text 2</a>.</p>
+  <p><a href="https://github.com/nathos/sass-textmate-bundle" title="github.com/nathos/sass-textmate-bundle">Sass for TextMate / Sublime Text 2</a> is the one I use for Sass and SCSS syntax highlighting. A similar package you can check out is <a href="https://github.com/P233/Syntax-highlighting-for-Sass" title="github.com/P233/Syntax-highlighting-for-Sass">Syntax Highlighting for Sass</a>.</p>
   <p><a href="https://github.com/siteleaf/liquid-syntax-mode" title="github.com/siteleaf/liquid-syntax-mode">Siteleaf Liquid Syntax</a> provides support for Liquid, as well as some useful snippets.</p>
   <h3 class="post_heading minor3">Other</h3>
   <p><a href="https://github.com/condemil/Gist" title="github.com/condemil/Gist">Gist</a> is a plugin for creating, well, gists—just select some code and hit the keyboard shortcut. You can also open and insert gists you already have on GitHub.</p>
   <p><a href="https://github.com/Azd325/sublime-text-caniuse" title="github.com/Azd325/sublime-text-caniuse">Sublime Text Caniuse</a> is helpful if you need a reminder of which browser supports what CSS property.</p>
+  <div class="post_update">
+    <small class="post_meta">Update: <time class="meta_date" datetime="2013-11-12">Nov. 12, 2013</time></small>
+    <p><a href="https://github.com/skuroda/FindKeyConflicts" title="github.com/skuroda/FindKeyConflicts">FindKeyConflicts</a> can help you locate keyboard shortcuts mapped to more than one package.</p>
+  </div>
   <h2 class="post_heading perfect4">Settings</h2>
   <p>You can access your settings file from Preferences &rarr; Settings - User.</p>
   <p class="post_note">The defaults are a handy reference, with comments and everything: Preferences &rarr; Settings - Default. You can’t put comments in the <em>user</em> settings file though (well you can, but they’ll be lost when you close it).</p>
   <p>So here’s what my settings look like (most are self-explanatory and / or described in the default settings file; some depend on external packages and other stuff):</p>
+  <div class="post_code">
+    <p class="code_title">JSON</p>
 {% highlight json %}
 {
   "auto_complete_commit_on_tab": true,
@@ -91,6 +100,7 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
   "word_wrap": true
 }
 {% endhighlight %}
+  </div>
   <p class="post_note">I’ve also backed this up <a href="https://gist.github.com/nightpolly/7275557" title="Preferences.sublime-settings gist">on GitHub</a>.</p>
   <p>A few notes:</p>
   <ul class="post_list post_list-unordered">
@@ -100,5 +110,7 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
 </div>
 
 <aside class="contentRelated">
-  <small class="post_meta">I wrote this in <time class="post_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time> and put it in <a class="post_category" href="/{{ page.category }}">{{ page.category }}</a>. It was very hard to finish it, because I kept going on searches for new things to install. I’ll be sure to keep it up-to-date.</small>
+  <small class="post_meta">I wrote this in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time> and put it in <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a>. It was very hard to finish it, because I kept going on searches for new things to install. I’ll be sure to keep it up-to-date.</small>
+  <h2 class="post_heading minor2">Updates</h2>
+  <small class="post_meta"><time class="meta_date" datetime="2013-11-12">Nov. 12, 2013</time>: Added <em>FindKeyConflicts</em> to the collection of packages.</small>
 </aside>

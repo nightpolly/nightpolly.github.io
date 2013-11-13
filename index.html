@@ -1,6 +1,8 @@
 ---
-layout: home
-title: home
+layout: default
+type: home
+title: nightpolly.com
+description: Hi. My name is Polly, I&rsquo;m a web designer and front-end developer. I come here to practice thinking&mdash;the most recent results of that below. You can also find me on <a href="https://twitter.com/NightPolly" title="@nightpolly">Twitter</a>.
 ---
 
 <ul class="ptsList">
@@ -9,7 +11,11 @@ title: home
     <h2 class="post_title perfect4">
       <a href="{{ post.url }}">{{ post.title }}</a>
     </h2>
-    <small class="post_meta">written on <time class="post_date" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ post.date | date: "%b" }}. {% endcase %}{{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}</time> &sdot; in <a class="post_category" href="/{{ post.category }}">{{ post.category }}</a></small>
+    <small class="post_meta post_meta-noflow">
+      <time class="meta_date" datetime="{{ post.date | date_to_xmlschema }}"><i class="icon icon-date" aria-hidden="true"></i> {% assign m = post.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ post.date | date: "%b" }}. {% endcase %}{{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}</time>
+      <span class="meta_readingTime"><i class="icon icon-time" aria-hidden="true"></i> {{ post.content | reading_time }}</span>
+      <a class="meta_category" href="/{{ post.category }}"><i class="icon icon-{{ post.category }}" aria-hidden="true"></i> {{ post.category }}</a>
+    </small>
     {% if post.description %}
     <p class="post_description">{{ post.description }}</p>
     {% endif %}
@@ -17,7 +23,7 @@ title: home
   {% endfor %}
 </ul>
 
-<div class="contentRelated">
+<div class="contentRelated clearfix">
   <span class="posts_pgNumber">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
   <div class="posts_pgLinks">
@@ -38,4 +44,3 @@ title: home
     {% endif %}
   </div>
 </div>
-

@@ -1,16 +1,13 @@
 <header class="container pgHeader pgHeader-{{ page.category }}">
-
-<h1 class="pgTitle minor2i">
-  <nav class="nav-breadcrumb" aria-label="You are here">
-    <ol class="nav_list">
-      <li class="nav_item nav-breadcrumb_item"><a class="nav_link" href="/" title="Home page">nightpolly.com</a></li>
-      <li class="nav_item nav-breadcrumb_item"><a class="nav_link" href="/{{ page.category }}" title="Post category">{{ page.category }}</a></li>
-    </ol>
-  </nav>
-</h1>
-
-{% if page.description %}
-<p class="pgDescription">This post is about: <em class="pgDescription_q">{{ page.description }}</em></p>
-{% endif %}
-
+  <h1 class="pgTitle minor2i">
+    <nav class="nav-breadcrumb" aria-label="You are here">
+      <ol class="nav_list">
+        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/" title="home page">nightpolly.com</a></li>
+        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/{{ page.category }}" title="post category">{{ page.category }}</a></li>
+      </ol>
+    </nav>
+  </h1>
+  {% if page.description %}
+  <p class="pgDescription">This post is about: <em class="pgDescription_q">{{ page.description }}</em></p>
+  {% endif %}
 </header>
