@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> notes |  nightpolly.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,300,300italic,400italic,700,700italic">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,300,300italic,400italic,700,700italic|Anonymous+Pro:400,400italic,700,700italic">
   <link rel="stylesheet" href="/css/min/nightpolly.min.css">
   <!--[if lt IE 9]><script src="/js/min/html5shiv.min.js"></script><![endif]-->
 
@@ -17,36 +19,49 @@
 
   ga('create', 'UA-44962346-1', 'nightpolly.com');
   ga('send', 'pageview');
-
   </script>
-
 </head>
 <body>
 
   <header class="container pgHeader pgHeader-notes">
-
-  <h1 class="pgTitle major3"><a class="pgTitle_link" href="/notes">notes</a></h1>
-
+  <h1 class="pgTitle major3">notes</h1>
   <nav class="nav-primary" role="navigation">
     <ul class="nav_list">
-      <li class="nav_item nav-primary_item"><a class="nav_link" href="/">home</a></li>
-      <li class="nav_item nav-primary_item"><a class="nav_link" href="/frontendings">frontendings</a></li>
-      <li class="nav_item nav-primary_item"><a class="nav_link" href="/notes">notes</a></li>
+      <li class="nav_item nav-primary_item"><a class="nav_link nav-primary_link" href="/"><i class="icon icon-home" aria-hidden="true"></i>home</a></li>
+      <li class="nav_item nav-primary_item"><a class="nav_link nav-primary_link" href="/frontendings"><i class="icon icon-frontendings" aria-hidden="true"></i>frontendings</a></li>
+      <li class="nav_item nav-primary_item"><a class="nav_link nav-primary_link" href="/notes"><i class="icon icon-notes" aria-hidden="true"></i>notes</a></li>
     </ul>
   </nav>
-
-  <p class="pgDescription">You’re walking down a sunny street in your neighborhood. A girl is gracefully floating toward you, in a way a drunken penguin would. Passing by, she bumps into you, making you spill your four-dollar coffee. You’re about to yell at her, but suddenly you realize you’re hearing her thoughts. It’s a made-up story, that’s how. This is what she thinks about:</p>
-
+  
+  <p class="pgDescription">You&rsquo;re walking down a sunny street in your neighborhood. A girl is gracefully floating toward you, in a way a drunken penguin would. Passing by, she bumps into you, making you spill your four-dollar coffee. You&rsquo;re about to yell at her, but suddenly you realize you&rsquo;re hearing her thoughts. It&rsquo;s a made-up story, that&rsquo;s how. This is what she thinks about.</p>
+  
 </header>
+
 
   <div class="container posts">
     <ul class="ptsList">
   
   <li class="post">
     <h2 class="post_title perfect4">
+      <a href="/notes/live-a-little">&lsquo;Live a Little&rsquo;</a>
+    </h2>
+    <small class="post_meta post_meta-noflow">
+      <time class="meta_date" datetime="2013-11-13T14:02:00+02:00"><i class="icon icon-date" aria-hidden="true"></i> Nov. 13, 2013</time>
+      <span class="meta_readingTime"><i class="icon icon-time" aria-hidden="true"></i> 2 minutes</span>
+    </small>
+    
+    <p class="post_description">The most useless advice my friends ever gave me.</p>
+    
+  </li>
+  
+  <li class="post">
+    <h2 class="post_title perfect4">
       <a href="/notes/smartweb-bucharest">SmartWeb, Bucharest</a>
     </h2>
-    <small class="post_meta">written on <time class="post_date" datetime="2013-10-24T05:44:00+03:00">Oct. 24, 2013</time></small>
+    <small class="post_meta post_meta-noflow">
+      <time class="meta_date" datetime="2013-10-24T05:44:00+03:00"><i class="icon icon-date" aria-hidden="true"></i> Oct. 24, 2013</time>
+      <span class="meta_readingTime"><i class="icon icon-time" aria-hidden="true"></i> 2 minutes</span>
+    </small>
     
     <p class="post_description">My experience at Eastern Europe&rsquo;s first front-end conference.</p>
     
@@ -56,7 +71,10 @@
     <h2 class="post_title perfect4">
       <a href="/notes/new-site">New Site</a>
     </h2>
-    <small class="post_meta">written on <time class="post_date" datetime="2013-09-23T17:33:00+03:00">Sept. 23, 2013</time></small>
+    <small class="post_meta post_meta-noflow">
+      <time class="meta_date" datetime="2013-09-23T17:33:00+03:00"><i class="icon icon-date" aria-hidden="true"></i> Sept. 23, 2013</time>
+      <span class="meta_readingTime"><i class="icon icon-time" aria-hidden="true"></i> less than a minute</span>
+    </small>
     
     <p class="post_description">I&rsquo;m making a thing and nobody told me it should be completed in order to be online.</p>
     
@@ -69,27 +87,25 @@
   </div>
 
   <footer class="container">
-
   <nav class="nav-secondary" role="navigation">
     <ul class="nav_list nav-secondary_list">
       <li class="nav_item nav-secondary_item">
-        <a class="nav_link" href="/"><i class="icon icon-home" aria-hidden="true"></i> home</a>
+        <a class="nav_link nav-secondary_link" href="/"><i class="icon icon-home" aria-hidden="true"></i> home</a>
       </li>
       <li class="nav_item nav-secondary_item">
-        <a class="nav_link" href="/frontendings"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
+        <a class="nav_link nav-secondary_link" href="/frontendings"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
       </li>
       <li class="nav_item nav-secondary_item">
-        <a class="nav_link" href="/notes"><i class="icon icon-notes" aria-hidden="true"></i> notes</a>
+        <a class="nav_link nav-secondary_link" href="/notes"><i class="icon icon-notes" aria-hidden="true"></i> notes</a>
       </li>
     </ul>
   </nav>
-
   <div class="siteNotes">
-    <p class="minor2i">If you’re done here, come say hi on <a href="http://twitter.com/NightPolly" title="@nightpolly">Twitter</a>! Or <em>hi @ [mydomain]</em> if email is your thing.</p>
+    <p class="minor2i">If you’re done here, come say hi on <a href="https://twitter.com/NightPolly" title="@nightpolly">Twitter</a>! Or <em>hi @ [mydomain]</em> if email is your thing.</p>
     <p class="copyright">&copy; 2013. Standing on the shoulders of GitHub.</p>
   </div>
-
 </footer>
+
 
 </body>
 </html>

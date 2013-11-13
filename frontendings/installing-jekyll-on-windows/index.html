@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Installing Jekyll on Windows |  nightpolly.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="description" content="A beginners&rsquo; guide to installing Jekyll on Windows, along with the Pygments syntax highlighter."> 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,300,300italic,400italic,700,700italic|Anonymous+Pro:400,400italic,700,700italic">
-  <link rel="stylesheet" href="/css/min/post-frontendings.min.css">
+  <link rel="stylesheet" href="/css/min/post.min.css">
   <!--[if lt IE 9]><script src="/js/min/html5shiv.min.js"></script><![endif]-->
 
   <script>
@@ -18,33 +20,33 @@
 
   ga('create', 'UA-44962346-1', 'nightpolly.com');
   ga('send', 'pageview');
-
   </script>
-
 </head>
 <body>
 
   <header class="container pgHeader pgHeader-frontendings">
-
-<h1 class="pgTitle minor2i">
-  <nav class="nav-breadcrumb" aria-label="You are here">
-    <ol class="nav_list">
-      <li class="nav_item nav-breadcrumb_item"><a class="nav_link" href="/" title="Home page">nightpolly.com</a></li>
-      <li class="nav_item nav-breadcrumb_item"><a class="nav_link" href="/frontendings" title="Post category">frontendings</a></li>
-    </ol>
-  </nav>
-</h1>
-
-
-<p class="pgDescription">This post is about: <em class="pgDescription_q">A beginners&rsquo; guide to installing Jekyll on Windows, along with the Pygments syntax highlighter.</em></p>
-
-
+  <h1 class="pgTitle minor2i">
+    <nav class="nav-breadcrumb" aria-label="You are here">
+      <ol class="nav_list">
+        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/" title="home page">nightpolly.com</a></li>
+        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/frontendings" title="post category">frontendings</a></li>
+      </ol>
+    </nav>
+  </h1>
+  
+  <p class="pgDescription">This post is about: <em class="pgDescription_q">A beginners&rsquo; guide to installing Jekyll on Windows, along with the Pygments syntax highlighter.</em></p>
+  
 </header>
+
 
   <article class="container post">
     <header class="post_section post_section-header">
   <h1 class="post_title major6">Installing Jekyll on Windows <span class="post_subtitle major3">and getting syntax highlighting to work</span></h1>
-  <small class="post_meta">written on <time class="post_date" datetime="2013-09-17T22:15:00+03:00">Sept. 17, 2013</time> &sdot; in <a class="post_category" href="/frontendings">frontendings</a> &sdot; read in about 7 minutes</small>
+  <small class="post_meta post_meta-noflow">
+  <time class="meta_date" datetime="2013-09-17T22:15:00+03:00" title="date written"><i class="icon icon-date" aria-hidden="true"></i> Sept. 17, 2013</time>
+  <span class="meta_readingTime" title="reading time"><i class="icon icon-time" aria-hidden="true"></i> 7 minutes</span>
+  <a class="meta_category" href="/frontendings" title="post category"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
+</small>
 
 </header>
 
@@ -65,27 +67,38 @@
   <h2 class="post_heading perfect4"><a id="meat-n-potatoes" href=""></a>The meat and potatoes</h2>
   <h3 class="post_heading minor3">Ruby</h3>
   <p>To check whether you already have Ruby on your computer (not very likely on a Windows), open cmd.exe and type:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">ruby -v</span>
 </code></pre></div>
+  </div>
   <p>When you hit Enter, it will either tell you what version of Ruby you’re running, or that it doesn’t know what you’re talking about.</p>
   <p>To get Ruby, <a href="http://rubyinstaller.org/downloads/">download RubyInstaller</a>. I got <em>Ruby 2.0.0-p247 (x64)</em> which, at the time of writing, was the latest version for a 64-bit Windows.</p>
   <p>From that same page, under <em>Other Useful Downloads</em>, get also Ruby Development Kit (see on the right which one corresponds to your version of Ruby).</p>
   <p>Run the RubyInstaller executable. At some point you’ll be presented with a few choices: installation destination (make it something like <b>C:\Ruby</b>), and three options. The first is not required for what we’re doing here, but select the other two:</p>
-  <figure class="post_figure post_figure-image post_block">
-    <img class="figure_content figure_content-image" src="/frontendings/img/ruby-installation-options.png" alt="Step of the installation of Ruby">
-    <figcaption class="figure_info figure_info-image">Fig. 1: <strong>Ruby instalation options</strong>. Hover over each option to see what it does.</figcaption>
+  <figure class="post_image">
+    <img class="image_img" src="/frontendings/img/ruby-installation-options.png" alt="Step of the installation of Ruby">
+    <figcaption class="image_caption">Fig. 1: <strong>Ruby instalation options</strong>. Hover over each option to see what it does.</figcaption>
   </figure>
   <h3 class="post_heading minor3">Development Kit</h3>
   <p>After the Ruby installation is complete, create a directory <b>C:\RubyDevKit</b> and run the second file you downloaded. When prompted where to extract the files, give that folder as a destination.</p>
   <p>Open that folder you just created. Shift + right-click inside it and choose the option <em>Open command window here</em>. cmd.exe should appear.</p>
-  <p class="post_note">As far as I know, this shift + right-click thing is not available on Windows versions prior to Vista. If you want to use it on XP, check out Microsoft’s <cite><a href="http://windows.microsoft.com/en-us/windows/xp-downloads#2TC=powertoys" title="Microsoft’s Open Command Window Here">separate tool</a></cite> (look for <em>Open Command Window Here</em>). Alternatively, you can just change directory in cmd.exe by typing:</p>
+  <p class="post_note">As far as I know, this shift + right-click thing is not available on Windows versions prior to Vista. If you want to use it on XP, check out Microsoft’s <a href="http://windows.microsoft.com/en-us/windows/xp-downloads#2TC=powertoys" title="Microsoft’s Open Command Window Here">separate tool</a> (look for <em>Open Command Window Here</em>). Alternatively, you can just change directory in cmd.exe by typing:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">cd C:\RubyDevKit</span>
 </code></pre></div>
+  </div>
   <p>Now that you’re in that folder, type:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">ruby dk.rb init</span>
 </code></pre></div>
+  </div>
   <p>and hit Enter. A message should inform you that the initialization is complete.</p>
   <p>Now there’s a generated file called <em>config.yml</em> in RubyDevKit. Open that file in your code editor. You’ll see a comment in the file, explaining what you have to do: Add one last line at the bottom to tell Development Kit where Ruby is:</p>
+  <div class="post_code">
+    <p class="code_title">YAML</p>
 <div class="highlight"><pre><code class="yaml"><span class="c1"># This configuration file contains the absolute path locations of all</span>
 <span class="c1"># installed Rubies to be enhanced to work with the DevKit. This config</span>
 <span class="c1"># file is generated by the &#39;ruby dk.rb init&#39; step and may be modified</span>
@@ -102,43 +115,65 @@
 <span class="nn">---</span>
 <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">C:/Ruby</span>
 </code></pre></div>
+  </div>
   <p>Save the file, go back to cmd.exe and type:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">ruby dk.rb install</span>
 </code></pre></div>
+  </div>
   <h3 class="post_heading minor3">Jekyll</h3>
   <p>Now you have both Ruby and Development Kit, so you can install Jekyll. Which is as simple as:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">gem install jekyll</span>
 </code></pre></div>
+  </div>
   <p>As of <a href="http://jekyllrb.com/docs/history/" title="Jekyll’s version history">version 0.12.0</a> Jekyll uses <a href="https://github.com/tmm1/pygments.rb">pygments.rb</a> as a replacement for <a href="https://github.com/github/albino">the Albino gem</a> for the syntax highlighting. In order for pygments.rb to work, you need a 2.x version of Python.</p>
   <p>So <a href="http://www.python.org/getit/" title="Python’s Download page">download Python</a> (I got version 2.7.5) and install it in destination such as <strong>C:\Python27</strong>.</p>
   <p>Right-click on Computer, select Properties. In the window that opens, select Advanced system settings (on the left). Then click the Environment Variables at the bottom of the next window. Then, under System variables, find the variable Path. Select it, click Edit, and add the paths to your Python installation.</p>
-  <figure class="post_figure post_figure-image post_block">
-    <img class="figure_content figure_content-image" src="/frontendings/img/windows-is-hard.png" alt="Editing the system variable Path">
-    <figcaption class="figure_info figure_info-image">Fig. 2: <strong>Windows is hard</strong>.</figcaption>
+  <figure class="post_image">
+    <img class="image_img" src="/frontendings/img/windows-is-hard.png" alt="Editing the system variable Path">
+    <figcaption class="image_caption">Fig. 2: <strong>Windows is hard</strong>.</figcaption>
   </figure>
   <p>You need to add <strong>C:\Python27;</strong> and <strong>C:\Python27\Scripts;</strong> where <strong>C:\Python27</strong> is the directory of your Python installation.</p>
   <h3 class="post_heading minor3">Python Distribute &amp; Pygments</h3>
   <p>Download Python’s <a href="http://python-distribute.org/distribute_setup.py">bootstrap Distribute installation</a>. Open cmd.exe in the directory of that file (or <code>cd</code> to it) and type:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">python distribute_setup.py</span>
 </code></pre></div>
+  </div>
   <p>After that one is done, install Pygments:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">easy_install Pygments</span>
 </code></pre></div>
+  </div>
   <h3 class="post_heading minor3">pygments.rb</h3>
   <p>Check what version of <em>pygments.rb</em> you have. You can find it in <strong>C:\Ruby\lib\ruby\gems\2.0.0\gems</strong> (adjust for your own Ruby directory). At the time of writing, cmd.exe showed errors with both 0.5.1 and 0.5.2 versions. So if yours is one of those, you might want to switch to 0.5.0, which seems to work just fine. Here’s how to do that:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">gem uninstall pygments.rb -v &quot;=0.5.2&quot;</span>
 <span class="go">gem install pygments.rb -v &quot;=0.5.0&quot;</span>
 </code></pre></div>
+  </div>
   <h2 class="post_heading perfect4">Test it</h2>
   <p>If you want to test if everything is working as expected, create a sample Jekyll site. If you are yet to learn how to use Jekyll, no worries—for this test at least Jekyll will pretty much do all of the hard work. Also, don’t go buying hosting services just yet. You can use Jekyll locally and preview your site in localhost.</p>
   <p>Make a folder, say <strong>D:\jekyll-test</strong>. Open cmd.exe in that folder and tell Jekyll to create your new site:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">jekyll new my-new-site</span>
 </code></pre></div>
+  </div>
   <p>cmd.exe will tell you something along the lines of “high five, human” (but in its own boring way) and inside your test folder you’ll find a new one, called <strong>my-new-site</strong>.</p>
   <p>Then <code>cd</code> to that folder, and start the development server:</p>
+  <div class="post_code">
+    <p class="code_title">cmd</p>
 <div class="highlight"><pre><code class="console"><span class="go">cd D:\jekyll-test\my-new-site</span>
 <span class="go">jekyll serve -w</span>
 </code></pre></div>
+  </div>
   <p>The <code>-w</code> part above (or <code>--watch</code>) means that Jekyll is going to monitor your files for changes and update the generated site if it finds something new.</p>
   <p>Now you can see your site at <a href="http://localhost:4000/">localhost:4000</a>. Conveniently, in that demo you have some sample code, so you can see the syntax highlighting in action.</p>
   <p class="post_note">Check out the <em>_config.yml</em> file in <strong>my-new-site</strong>. This is your site’s configuration file. You can see the defaults in <a href="http://jekyllrb.com/docs/configuration/">Jekyll’s documentation</a>.</p>
@@ -147,7 +182,7 @@
 </div>
 
 <aside class="contentRelated">
-  <small class="post_meta">This guide was neatly stacked into <a class="post_category" href="/frontendings">frontendings</a> in <time class="post_date" datetime="2013-09-17T22:15:00+03:00">September 2013</time>.</small>
+  <small class="post_meta">This guide was neatly stacked into <a class="meta_category" href="/frontendings">frontendings</a> in <time class="meta_date" datetime="2013-09-17T22:15:00+03:00">September 2013</time>.</small>
   <ul class="post_list post_list-unordered">
     <h2 class="post_heading major2">Main links from the article</h2>
     <li><cite><a href="http://rubyinstaller.org/downloads/">RubyInstaller for Windows: Downloads</a></cite>—get Ruby and Ruby Development Kit</li>
@@ -162,27 +197,25 @@
   </article>
 
   <footer class="container">
-
   <nav class="nav-secondary" role="navigation">
     <ul class="nav_list nav-secondary_list">
       <li class="nav_item nav-secondary_item">
-        <a class="nav_link" href="/"><i class="icon icon-home" aria-hidden="true"></i> home</a>
+        <a class="nav_link nav-secondary_link" href="/"><i class="icon icon-home" aria-hidden="true"></i> home</a>
       </li>
       <li class="nav_item nav-secondary_item">
-        <a class="nav_link" href="/frontendings"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
+        <a class="nav_link nav-secondary_link" href="/frontendings"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
       </li>
       <li class="nav_item nav-secondary_item">
-        <a class="nav_link" href="/notes"><i class="icon icon-notes" aria-hidden="true"></i> notes</a>
+        <a class="nav_link nav-secondary_link" href="/notes"><i class="icon icon-notes" aria-hidden="true"></i> notes</a>
       </li>
     </ul>
   </nav>
-
   <div class="siteNotes">
-    <p class="minor2i">If you’re done here, come say hi on <a href="http://twitter.com/NightPolly" title="@nightpolly">Twitter</a>! Or <em>hi @ [mydomain]</em> if email is your thing.</p>
+    <p class="minor2i">If you’re done here, come say hi on <a href="https://twitter.com/NightPolly" title="@nightpolly">Twitter</a>! Or <em>hi @ [mydomain]</em> if email is your thing.</p>
     <p class="copyright">&copy; 2013. Standing on the shoulders of GitHub.</p>
   </div>
-
 </footer>
+
 
 </body>
 </html>
