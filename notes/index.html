@@ -13,7 +13,6 @@ description: You&rsquo;re walking down a sunny street in your neighborhood. A gi
     </h2>
     <small class="post_meta post_meta-noflow">
       <time class="meta_date" datetime="{{ post.date | date_to_xmlschema }}"><i class="icon icon-date" aria-hidden="true"></i> {% assign m = post.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ post.date | date: "%b" }}. {% endcase %}{{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}</time>
-      <span class="meta_readingTime"><i class="icon icon-time" aria-hidden="true"></i> {{ post.content | reading_time }}</span>
     </small>
     {% if post.description %}
     <p class="post_description">{{ post.description }}</p>
@@ -21,5 +20,3 @@ description: You&rsquo;re walking down a sunny street in your neighborhood. A gi
   </li>
   {% endfor %}
 </ul>
-
-<small class="contentRelated">Not much to read yet. In the mean time, wanna see if we like the same <a href="https://readmill.com/NightPolly" title="my Readmill profile">books</a>?</small>

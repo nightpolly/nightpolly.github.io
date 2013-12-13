@@ -1,5 +1,4 @@
 <small class="post_meta post_meta-noflow">
   <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}" title="date written"><i class="icon icon-date" aria-hidden="true"></i> {% assign m = page.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ page.date | date: "%b" }}. {% endcase %}{{ page.date | date: "%d" | plus:'0' }}, {{ page.date | date: "%Y" }}</time>
-  <span class="meta_readingTime" title="reading time"><i class="icon icon-time" aria-hidden="true"></i> {{ page.content | reading_time }}</span>
   <a class="meta_category" href="/{{ page.category }}" title="post category"><i class="icon icon-{{ page.category }}" aria-hidden="true"></i> {{ page.category }}</a>
 </small>
