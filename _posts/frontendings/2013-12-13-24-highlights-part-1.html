@@ -3,34 +3,36 @@ layout: post
 title: 24 Highlights, Part 1
 date: 2013-12-13 03:15
 category: frontendings
-description: Making a lightbox with CSS&mdash;an experiment with :target and flexbox.
+description: Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 1 of 2.
 ---
 
 <header class="post_section post_section-header">
-  <h1 class="post_title major6">24 Highlights, Part 1 <span class="post_subtitle major3">Creating a working lightbox</span></h1>
+  <h1 class="post_title major6">24 Highlights, Part 1</h1>
+  <span class="post_subtitle major3">Creating a working lightbox</span>
   {% include post_meta-top.html %}
 </header>
 
 <div class="post_section post_section-entry">
-  <p class="post_lede">Everything we need to make a CSS-only lightbox is the <code>:target</code> pseudo class. In addition, we also have CSS transitions and flexbox—to make everything look like creating it took no effort whatsoever.</p>
-  <p>In the spirit of counting days in anticipation of Christmas, I went back to some of the books I read this year, pulled 24 highlighted passages, and arranged them into an Advent calendar. Or, you know, a bunch of boxes with numbers in them.</p>
+  <p class="post_lede">Everything we need to make a CSS-only lightbox is the <code>:target</code> pseudo-class. In addition, we also have CSS transitions and flexbox—to make everything look like creating it took no effort whatsoever.</p>
+  <p>In the spirit of counting days in anticipation of Christmas, I went back to some of the books I read this year, pulled 24 highlighted passages, and arranged them into an Advent calendar. Or, you know, a bunch of squares with numbers in them.</p>
   <div class="post_demoPeek post_demoPeek-hasImage">
     <img class="demoPeek_image" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
     <span class="demoPeek_container"><a class="demoPeek_link" href="../demos/24-highlights/" title="demo page: 24 Highlights"><i class="icon icon-demo"></i> view demo</a></span>
   </div>
   <p class="post_note">Fully supported in <a href="https://www.google.com/intl/en/chrome/browser/" title="download Google Chrome">Chrome</a> (31.0) and <a href="http://www.opera.com/" title="download Opera">Opera</a> (18.0). Works but isn’t pretty in the other major browsers. Doesn’t work in IE 8 and below.</p>
-  <p>Anyway, I enjoyed coding my little demo page, and I’ll try to break that down into steps. This is part 1 of 2, and it’s mostly about how the lightboxes are going to work and the page’s structure.</p>
-  <p>If you just want to see the (fairly modest) result, I’ve put the code from this post in a <a href="../demos/24-highlights/part-1.html" title="demo: Part 1">separate page</a>.</p>
+  <p class="post_note">The source files are <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="files for the finished page">on GitHub</a>.</p>
+  <p>Anyway, I enjoyed coding my little demo page, and I’ll try to break that down into steps. This is Part 1 of 2, and it’s mostly about how the lightboxes are going to work and the page’s structure.</p>
+  <p>If you just want to see the (fairly modest) result from this part, I’ve put it in a <a href="../demos/24-highlights/part-1.html" title="final result from Part 1">separate page</a>.</p>
   <h2 class="post_heading perfect4">The HTML</h2>
-  <p>The main container of the demo is <code>.highlights</code>. Inside it, there’s a header and an ordered list with 24 list items.</p>
+  <p>The main container of the demo is <code>.container</code>. Inside it, there’s a header and an ordered list with 24 list items.</p>
   <div class="post_code">
     <p class="code_title">HTML</p>
 {% highlight html %}
-<div class="highlights">
-  <header class="highlights_head">
+<div class="container">
+  <header class="header">
     [...]
   </header>
-  <ol class="highlights_list">
+  <ol class="list">
     [...]
   </ol>
 </div>
@@ -40,8 +42,8 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
   <div class="post_code">
     <p class="code_title">HTML</p>
 {% highlight html %}
-<ol class="highlights_list">
-  <li class="highlight highlight-1">
+<ol class="list">
+  <li class="item item-1">
 
     <!-- call the lightbox -->
     <a href="#title-of-the-highlight" class="show" id="dec1">1</a>
@@ -50,7 +52,7 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
     <div class="lightbox" id="title-of-the-highlight">[...]</div>
 
   </li>
-  [ more list items ]
+  <!-- [ more list items ] -->
 </ol>
 {% endhighlight %}
   </div>
@@ -63,8 +65,8 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
   <!-- away with the lightbox -->
   <a href="#dec1" class="hide"></a>
 
-  <!-- book highlight contents -->
-  <figure class="highlight_content">
+  <!-- book highlight -->
+  <figure class="highlight">
     <h2>
       <!-- Title of the Highlight -->
     </h2>
@@ -80,40 +82,40 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
 {% endhighlight %}
   </div>
   <p>So, we have a <code>.show</code> link whose target the lightbox is. But also inside the lightbox there’s a <code>.hide</code> link, which points to the <code>.show</code> link.</p>
-  <p>The result of that is, if you take the demo for example: The original link to the page is <a href="../demos/24-highlights/">../demos/24-highlights/</a>. Say you like the highlight titled <em>Immortal</em> and you want to share it—use its unique url: <a href="../demos/24-highlights/#immortal">../demos/24-highlights/<strong>#immortal</strong></a>. After you close the highlight, you can still see which one it was, because its box looks different (and the url points to <a href="../demos/24-highlights/#dec4">../demos/24-highlights/<strong>#dec4</strong></a>).</p>
+  <p>The result of that is, if you take the demo for example: The original link to the page is <a href="../demos/24-highlights/">../demos/24-highlights/</a>. Say you like the highlight titled <em>Immortal</em> and you want to share it—use its unique url: <a href="../demos/24-highlights/#immortal">../demos/24-highlights/<strong>#immortal</strong></a>. After you close the highlight, you can still see which one it was—the square with the number 4 looks different (and the url points to <a href="../demos/24-highlights/#dec4">../demos/24-highlights/<strong>#dec4</strong></a>).</p>
   <h2 class="post_heading perfect4">The CSS</h2>
   <p class="post_note">To keep it simple, I haven’t included fallbacks and browser prefixes in the code below.</p>
   <h3 class="post_heading minor3">Reset &amp; Normalize</h3>
-  <p>Reseting styles is a matter of personal preferences and / or context. I’ve included a tiny normalize section in the CSS for the demo.</p>
+  <p>Reseting styles is a matter of personal preferences and/or context. I’ve included a tiny normalize section in the CSS for the demo.</p>
   <h3 class="post_heading minor3">A few styles for the container and header</h3>
   <div class="post_code">
     <p class="code_title">CSS</p>
 {% highlight css %}
-.highlights {
+.container {
   width: 95%;
   max-width: 60rem;
   margin: 0 auto;
   font-size: 1rem; /* 16px */
 }
 @media screen and (min-width: 37em) {
-  .highlights {
+  .container {
     font-size: 1.25rem; /* 20px */
   }
 }
 @media screen and (min-width: 44em) {
-  .highlights {
+  .container {
     font-size: 1.625rem; /* 26px */
   }
 }
 
-.highlights_head {
+.header {
   margin-bottom: 1.25em;
   text-align: center;
 }
 {% endhighlight %}
   </div>
   <h3 class="post_heading minor3">Showing and hiding the lightboxes</h3>
-  <p>We’re going to position all the lightboxes at the bottom of the page and give them a zero-height by default. When one of them is <code>:target</code>-ed, it will grow from the bottom up and fill the entire page. Its contents will be centered both horizontally and vertically—flexbox will take care of that.</p>
+  <p>We’re going to position all the lightboxes at the bottom of the page and give them a zero-height by default. When one of them is <code>:target</code>-ed, it will “grow” from the bottom up and fill the entire page (that’s for later though, for now it’ll just show up). Its content (the book highlight) will be centered both horizontally and vertically—flexbox will take care of that.</p>
   <div class="post_code">
     <p class="code_title">CSS</p>
 {% highlight css %}
@@ -126,9 +128,9 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
   height: 0;
   top: 100%;
   left: 0;
-  background: #dfe8e8; /* light blue */
+  background: rgba(3, 31, 54, 0.93); /* dark blue */
   overflow: hidden;
-  transition: top 0.7s ease-in-out, height 1.1s ease-in-out;
+  z-index: 1;
 }
 .lightbox:target {
   height: 100%;
@@ -136,7 +138,7 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
 }
 {% endhighlight %}
   </div>
-  <p>Now for the hiding part. The <code>.hide</code> link can have an icon or some text in it, but I chose to leave it empty. Its <code>::before</code> pseudo element however will serve as a giant button the size of the viewport. This way, we can hide the highlight by clicking anywhere around it.</p>
+  <p>Now for the hiding part. The <code>.hide</code> link can have an icon or some text in it, but I chose to leave it empty. Its <code>::before</code> pseudo-element however will serve as a giant button the size of the viewport. This way, we can hide the highlight by clicking anywhere around it.</p>
   <div class="post_code">
     <p class="code_title">CSS</p>
 {% highlight css %}
@@ -157,10 +159,10 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
   <div class="post_code">
     <p class="code_title">CSS</p>
 {% highlight css %}
-.highlight_content {
+.highlight {
   position: relative;
   width: 90%;
-  max-width: 43.75rem; /* 700px */
+  max-width: 43.75rem;
   max-height: 80%;
   overflow-y: auto;
 }
@@ -168,16 +170,16 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
   </div>
   <p>Now that we’re done with the showing and the hiding, everything else is just to make the page look nice. I had a field day with that, but I won’t go into the details for now. Just a couple more things before we wrap up Part 1.</p>
   <h3 class="post_heading minor3">Arranging the list items</h3>
-  <p>I wanted to use <code>flex-wrap</code> to wrap the boxes in rows, but Firefox doesn’t support that yet, and 24 items within a single row looks too bad to ignore, even if it’s just an experiment. Wrapping <em>is</em> coming though—it already works in <a href="http://nightly.mozilla.org/" title="download Firefox Nightly">Firefox Nightly</a>.</p>
+  <p>I wanted to use <code>flex-wrap</code> to wrap all the squares in rows, but Firefox doesn’t support that yet, and 24 items within a single row looks too bad to ignore, even if it’s just an experiment. Wrapping <em>is</em> coming though—it already works in <a href="http://nightly.mozilla.org/" title="download Firefox Nightly">Firefox Nightly</a>.</p>
   <p>For now we can use floats, or in this case, center the list’s text and apply <code>display:inline-block</code> and <code>text-align:left</code> to the list items.</p>
-  <div class="post_code">
+  <div class="post_code" id="styles-list-and-item">
     <p class="code_title">CSS</p>
 {% highlight css %}
-.highlights_list {
+.list {
   list-style: none;
   text-align: center;
 }
-.highlight {
+.item {
   display: inline-block;
   width: 3em;
   height: 3em;
@@ -187,8 +189,8 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
 {% endhighlight %}
   </div>
   <h3 class="post_heading minor3">Styling the <code>.show</code> links</h3>
-  <p>We’ll use flexbox here as well, to position the numbers inside their boxes. It’s just easier and makes sense, though it’s not the only solution.</p>
-  <div class="post_code">
+  <p>We’ll use flexbox here as well, to position each number in the bottom left corner of its container. It’s just easier and makes sense, though it’s not the only solution.</p>
+  <div class="post_code" id="basic-styles-show">
     <p class="code_title">CSS</p>
 {% highlight css %}
 .show {
@@ -198,7 +200,7 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
   width: 100%;
   height: 100%;
   padding: 0.25em;
-  background: #dfe8e8;
+  background: #dfe8e8; /* pale blue */
   color: #d32442; /* red */
   text-decoration: none;
 }
@@ -214,13 +216,17 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
 }
 {% endhighlight %}
   </div>
-  <p>That’s all for now—we have the <a href="../demos/24-highlights/part-1.html" title="part 1 finished">basic structure</a>. The second part with the more colorful stuff will be coming in a few days.</p>
+  <p>That’s all for now—we have the <a href="../demos/24-highlights/part-1.html" title="final result from Part 1">basic structure</a>. The second part with the more colorful stuff will be coming in a few days.</p>
+  <div class="post_update">
+    <small class="post_meta">Update: <time class="meta_date" datetime="2013-12-22">Dec. 22, 2013</time></small>
+    <p>Check out <a href="/frontendings/24-highlights-part-2/" title="next part of the article">Part 2</a>!</p>
+  </div>
 </div>
 
 <aside class="contentRelated">
   <small class="post_meta">This was fun. Written in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time> in <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a>.</small>
+  <h2 class="post_heading major2">Some helpful resources</h2>
   <ul class="post_list post_list-unordered">
-    <h2 class="post_heading major2">Some helpful resources</h2>
     <li><cite><a href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html">The Ultimate Flexbox Cheat Sheet</a></cite>—by <a href="https://twitter.com/sfioritto" title="@sfioritto">Sean Fioritto</a></li>
     <li><cite><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">Using CSS flexible boxes</a></cite>—Mozilla Developer Network</li>
     <li><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">:target</a></cite>—again from MDN</li>
