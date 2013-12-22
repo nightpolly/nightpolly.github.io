@@ -1,4 +1,15 @@
 @charset "UTF-8";
+/*
+ * Typefaces and main colors used:
+ *
+ * sans-serif: Open Sans
+ * serif: Gentium Book Basic
+ *
+ * dark blue: #031f36
+ * pale blue: #dfe8e8
+ * green: #5fbfb6
+ * red: #d32442
+ */
 /* === Normalize === */
 * {
   -moz-box-sizing: border-box;
@@ -26,6 +37,12 @@ q {
   quotes: "“" "”" "‘" "’" "“" "”" "‘" "’";
 }
 
+/* === Base === */
+body {
+  background: #031f36;
+  line-height: 1.3;
+}
+
 /* === Container and main header === */
 .container {
   width: 95%;
@@ -47,6 +64,19 @@ q {
 .header {
   margin-bottom: 1.25em;
   text-align: center;
+}
+
+.header > h1 {
+  margin-bottom: 0.25em;
+  font: 300 1.25em "Open Sans", sans-serif;
+  color: #dfe8e8;
+}
+
+.header > p {
+  font: 0.8125em "Gentium Book Basic", serif;
+  color: #dfe8e8;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 /* === List and list items === */
@@ -74,6 +104,7 @@ q {
   height: 100%;
   padding: 0.25em;
   background: #dfe8e8;
+  font: 1.5em/1 "Gentium Book Basic", serif;
   color: #d32442;
   text-decoration: none;
 }
@@ -94,7 +125,14 @@ q {
   height: 100%;
   top: 0;
   left: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font: 300 0.625rem "Open Sans", sans-serif;
+  color: #779d9d;
   text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
 }
 
 .lightbox {
@@ -109,7 +147,7 @@ q {
   height: 0;
   top: 100%;
   left: 0;
-  background: #dfe8e8;
+  background: rgba(3, 31, 54, 0.93);
   overflow: hidden;
   z-index: 1;
 }
@@ -124,5 +162,38 @@ q {
   width: 90%;
   max-width: 43.75rem;
   max-height: 80%;
+  padding-left: 1.5em;
   overflow-y: auto;
+  font-family: "Gentium Book Basic", serif;
+}
+
+.highlight > h2 {
+  margin-bottom: 1.25em;
+  font: 300 1.1875em "Open Sans", sans-serif;
+  color: #dfe8e8;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.highlight > blockquote {
+  margin-bottom: 0.5em;
+  font-size: 1.125em;
+}
+
+.highlight > footer {
+  color: #5fbfb6;
+  text-indent: -1em;
+}
+
+.highlight_author {
+  font-size: 0.75em;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.highlight_book {
+  font-size: 1em;
+  font-style: italic;
 }

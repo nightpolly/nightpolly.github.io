@@ -1,4 +1,25 @@
 @charset "UTF-8";
+/*
+ * Typefaces and main colors used:
+ *
+ * sans-serif: Open Sans
+ * serif: Gentium Book Basic
+ *
+ * dark blue: #031f36
+ * pale blue: #dfe8e8
+ * green: #5fbfb6
+ * red: #d32442
+ */
+/*
+ * Table of Contents:
+ *
+ * 1. Normalize
+ * 2. Base
+ * 3. Container and main header
+ * 4. List and list items
+ * 5. Lightboxes
+ * 6. Book highlights (quotes)
+ */
 /* === Normalize === */
 * {
   -moz-box-sizing: border-box;
@@ -26,54 +47,55 @@ q {
   quotes: "“" "”" "‘" "’" "“" "”" "‘" "’";
 }
 
-/* === Base styles === */
+/* === Base === */
 body {
   background: #031f36;
   line-height: 1.3;
 }
 
-/* === 24 Highlights === */
-.highlights {
+/* === Container and main header === */
+.container {
   width: 95%;
   max-width: 60rem;
   margin: 0 auto;
   font-size: 1rem;
 }
 @media screen and (min-width: 37em) {
-  .highlights {
+  .container {
     font-size: 1.25rem;
   }
 }
 @media screen and (min-width: 44em) {
-  .highlights {
+  .container {
     font-size: 1.625rem;
   }
 }
 
-.highlights_head {
+.header {
   margin-bottom: 1.25em;
   text-align: center;
 }
 
-.highlights_head > h1 {
+.header > h1 {
   margin-bottom: 0.25em;
   font: 300 1.25em "Open Sans", sans-serif;
   color: #dfe8e8;
 }
 
-.highlights_head > p {
+.header > p {
   font: 0.8125em "Gentium Book Basic", serif;
   color: #dfe8e8;
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 
-.highlights_list {
+/* === List and list items === */
+.list {
   list-style: none;
   text-align: center;
 }
 
-.highlight {
+.item {
   display: inline-block;
   width: 3em;
   height: 3em;
@@ -81,123 +103,124 @@ body {
   text-align: left;
 }
 @media screen and (min-width: 44em) {
-  .highlight {
+  .item {
     position: relative;
     width: 90px;
     height: 90px;
   }
-  .highlight::before {
+  .item::before {
     content: "";
     position: absolute;
     display: block;
     width: 100%;
     height: 100%;
     top: -10%;
-    right: -5%;
+    right: -10%;
     background: url(../img/24-book-covers.png) no-repeat;
+    z-index: -1;
   }
 }
-@media screen and (min-resolution: 2dppx) and (min-width: 44em), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em) {
-  .highlight::before {
+@media screen and (min-width: 44em) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 44em) and (min-resolution: 2dppx), screen and (min-width: 44em) and (min-resolution: 192dpi) {
+  .item::before {
     background-image: url(../img/24-book-covers-2x.png);
     background-size: 450px 450px;
   }
 }
 
 @media screen and (min-width: 44em) {
-  .highlight-1::before {
+  .item-1::before {
     background-position: 0 0;
   }
 
-  .highlight-2::before {
+  .item-2::before {
     background-position: -90px 0;
   }
 
-  .highlight-3::before {
+  .item-3::before {
     background-position: -180px 0;
   }
 
-  .highlight-4::before {
+  .item-4::before {
     background-position: -270px 0;
   }
 
-  .highlight-5::before {
+  .item-5::before {
     background-position: -360px 0;
   }
 
-  .highlight-6::before {
+  .item-6::before {
     background-position: 0 -90px;
   }
 
-  .highlight-7::before {
+  .item-7::before {
     background-position: -90px -90px;
   }
 
-  .highlight-8::before {
+  .item-8::before {
     background-position: -180px -90px;
   }
 
-  .highlight-9::before {
+  .item-9::before {
     background-position: -270px -90px;
   }
 
-  .highlight-10::before {
+  .item-10::before {
     background-position: -360px -90px;
   }
 
-  .highlight-11::before {
+  .item-11::before {
     background-position: 0 -180px;
   }
 
-  .highlight-12::before {
+  .item-12::before {
     background-position: -90px -180px;
   }
 
-  .highlight-13::before {
+  .item-13::before {
     background-position: -180px -180px;
   }
 
-  .highlight-14::before {
+  .item-14::before {
     background-position: -270px -180px;
   }
 
-  .highlight-15::before {
+  .item-15::before {
     background-position: -360px -180px;
   }
 
-  .highlight-16::before {
+  .item-16::before {
     background-position: -0 -270px;
   }
 
-  .highlight-17::before {
+  .item-17::before {
     background-position: -90px -270px;
   }
 
-  .highlight-18::before {
+  .item-18::before {
     background-position: -180px -270px;
   }
 
-  .highlight-19::before {
+  .item-19::before {
     background-position: -270px -270px;
   }
 
-  .highlight-20::before {
+  .item-20::before {
     background-position: -360px -270px;
   }
 
-  .highlight-21::before {
+  .item-21::before {
     background-position: 0 -360px;
   }
 
-  .highlight-22::before {
+  .item-22::before {
     background-position: -90px -360px;
   }
 
-  .highlight-23::before {
+  .item-23::before {
     background-position: -180px -360px;
   }
 
-  .highlight-24::before {
+  .item-24::before {
     background-position: -270px -360px;
   }
 }
@@ -213,9 +236,8 @@ body {
   height: 100%;
   padding: 0.25em;
   background: #dfe8e8;
-  background: linear-gradient(36deg, rgba(223, 232, 232, 0.8) 0%, #dfe8e8 75%);
-  -webkit-clip-path: polygon(0 0, 65% 0, 100% 25%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 65% 0, 100% 25%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 70% 0, 100% 30%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 70% 0, 100% 30%, 100% 100%, 0 100%);
   font: 1.5em/1 "Gentium Book Basic", serif;
   color: #d32442;
   text-decoration: none;
@@ -226,36 +248,37 @@ body {
   content: "";
   position: absolute;
   display: block;
-  width: 35%;
-  height: 25%;
+  width: 30%;
+  height: 30%;
   top: 0;
   right: 0;
   background: #9dd8d2;
-  background: linear-gradient(36deg, #9dd8d2 0%, #5fbfb6 43%, #9dd8d2 58%);
+  background: linear-gradient(45deg, #9dd8d2 0%, #5fbfb6 43%, #9dd8d2 58%);
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.12);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .show:focus, .show:target {
   outline: 0;
-  -webkit-clip-path: polygon(0 0, 30% 0, 100% 50%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 30% 0, 100% 50%, 100% 100%, 0 100%);
-  color: #234460;
+  -webkit-clip-path: polygon(0 0, 50% 0, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 0, 100% 50%, 100% 100%, 0 100%);
+  color: #063b66;
 }
 .show:focus::after, .show:target::after {
-  width: 70%;
+  width: 50%;
   height: 50%;
 }
 .show:hover {
-  -webkit-clip-path: polygon(0 0, 10% 0, 100% 64%, 100% 100%, 0 100%);
-  clip-path: polygon(0 0, 10% 0, 100% 64%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 20% 0, 100% 80%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 20% 0, 100% 80%, 100% 100%, 0 100%);
   color: #89172b;
 }
 .show:hover::after {
-  width: 90%;
-  height: 64%;
+  width: 80%;
+  height: 80%;
 }
 
+/* === Lightboxes === */
 .hide::before {
   content: "Click outside the text to hide it";
   position: absolute;
@@ -272,7 +295,6 @@ body {
   text-align: right;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  cursor: pointer;
 }
 
 .lightbox {
@@ -298,7 +320,8 @@ body {
   top: 0;
 }
 
-.highlight_content {
+/* === Book highlights (quotes) === */
+.highlight {
   position: relative;
   width: 90%;
   max-width: 43.75rem;
@@ -306,10 +329,9 @@ body {
   padding-left: 1.5em;
   overflow-y: auto;
   font-family: "Gentium Book Basic", serif;
-  color: #031f36;
 }
 
-.highlight_content > h2 {
+.highlight > h2 {
   margin-bottom: 1.25em;
   font: 300 1.1875em "Open Sans", sans-serif;
   color: #dfe8e8;
@@ -317,23 +339,23 @@ body {
   letter-spacing: 0.15em;
 }
 
-.highlight_content > blockquote {
+.highlight > blockquote {
   position: relative;
   margin-bottom: 0.5em;
   font-size: 1.125em;
-  color: #234460;
+  color: #031f36;
 }
-.highlight_content > blockquote::before {
+.highlight > blockquote::before {
   content: "";
   position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
-  margin-top: -0.7em;
+  margin-top: -0.67em;
   background: #dfe8e8;
   z-index: -1;
 }
-.highlight_content > blockquote::after {
+.highlight > blockquote::after {
   content: "\201C";
   position: absolute;
   top: 0;
@@ -343,7 +365,7 @@ body {
   text-indent: -0.5em;
 }
 
-.highlight_content > footer {
+.highlight > footer {
   color: #5fbfb6;
   text-indent: -1em;
 }
