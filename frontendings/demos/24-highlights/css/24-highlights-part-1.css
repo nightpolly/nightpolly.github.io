@@ -26,39 +26,36 @@ q {
   quotes: "“" "”" "‘" "’" "“" "”" "‘" "’";
 }
 
-body {
-  line-height: 1.3;
-}
-
-/* === 24 Highlights === */
-.highlights {
+/* === Container and main header === */
+.container {
   width: 95%;
   max-width: 60rem;
   margin: 0 auto;
   font-size: 1rem;
 }
 @media screen and (min-width: 37em) {
-  .highlights {
+  .container {
     font-size: 1.25rem;
   }
 }
 @media screen and (min-width: 44em) {
-  .highlights {
+  .container {
     font-size: 1.625rem;
   }
 }
 
-.highlights_head {
+.header {
   margin-bottom: 1.25em;
   text-align: center;
 }
 
-.highlights_list {
+/* === List and list items === */
+.list {
   list-style: none;
   text-align: center;
 }
 
-.highlight {
+.item {
   display: inline-block;
   width: 3em;
   height: 3em;
@@ -82,12 +79,13 @@ body {
 }
 .show:focus, .show:target {
   outline: 0;
-  color: #234460;
+  color: #063b66;
 }
 .show:hover {
   color: #89172b;
 }
 
+/* === Lightboxes === */
 .hide::before {
   content: "Click outside the text to hide it";
   position: absolute;
@@ -113,15 +111,15 @@ body {
   left: 0;
   background: #dfe8e8;
   overflow: hidden;
-  -webkit-transition: top 0.7s ease-in-out, height 1.1s ease-in-out;
-  transition: top 0.7s ease-in-out, height 1.1s ease-in-out;
+  z-index: 1;
 }
 .lightbox:target {
   height: 100%;
   top: 0;
 }
 
-.highlight_content {
+/* === Book highlights (quotes) === */
+.highlight {
   position: relative;
   width: 90%;
   max-width: 43.75rem;
