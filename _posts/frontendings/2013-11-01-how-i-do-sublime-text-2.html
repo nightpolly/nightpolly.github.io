@@ -22,6 +22,10 @@ description: My Sublime Text 2 setup&mdash;settings and installed packages.
   <h3 class="post_heading minor3">Lookin’ good</h3>
   <p class="post_note">Sublime Text has some nice color schemes for you to choose from, but you can also install more, or even write your own.</p>
   <p><a href="https://github.com/daylerees/colour-schemes" title="github.com/daylerees/colour-schemes">Dayle Rees Color Schemes</a> is a very popular collection of color schemes, and <a href="http://chriskempson.github.io/base16/" title="chriskempson.github.io/base16">base16</a> is worth a try, too. I also use <a href="https://github.com/sindresorhus/focus" title="github.com/sindresorhus/focus">Focus</a>, which is useful when you want to only concentrate on the content.</p>
+  <div class="post_update" id="update-2013-12-28">
+    <small class="post_meta">Update: <time class="meta_date" datetime="2013-12-28">Dec. 28, 2013</time></small>
+    <p><a href="http://kkga.github.io/spacegray/" title="kkga.github.io/spacegray">Spacegray</a> is a beautiful UI theme for Sublime Text. Search for “Theme - Spacegray” in Package Control to try it.</p>
+  </div>
   <h3 class="post_heading minor3">Power-coding</h3>
   <p><a href="http://emmet.io/" title="emmet.io">Emmet</a> is definitely worth checking out if you work with HTML and CSS. You can do many things with it, here’s just one quick example:</p>
   <div class="post_code">
@@ -51,7 +55,7 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
   <h3 class="post_heading minor3">Other</h3>
   <p><a href="https://github.com/condemil/Gist" title="github.com/condemil/Gist">Gist</a> is a plugin for creating, well, gists—just select some code and hit the keyboard shortcut. You can also open and insert gists you already have on GitHub.</p>
   <p><a href="https://github.com/Azd325/sublime-text-caniuse" title="github.com/Azd325/sublime-text-caniuse">Sublime Text Caniuse</a> is helpful if you need a reminder of which browser supports what CSS property.</p>
-  <div class="post_update">
+  <div class="post_update" id="update-2013-11-12">
     <small class="post_meta">Update: <time class="meta_date" datetime="2013-11-12">Nov. 12, 2013</time></small>
     <p><a href="https://github.com/skuroda/FindKeyConflicts" title="github.com/skuroda/FindKeyConflicts">FindKeyConflicts</a> can help you locate keyboard shortcuts mapped to more than one package.</p>
   </div>
@@ -68,6 +72,7 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
   "bold_folder_labels": true,
   "caret_style": "wide",
   "color_scheme": "Packages/awesome/LastNight.tmTheme",
+  "default_line_ending": "unix",
   "detect_slow_plugins": false,
   "ensure_newline_at_eof_on_save": true,
   "file_exclude_patterns":
@@ -95,6 +100,7 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
   "line_padding_top": 1,
   "overlay_scroll_bars": "enabled",
   "tab_size": 2,
+  "theme": "Spacegray.sublime-theme",
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
   "word_wrap": true
@@ -112,5 +118,8 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
 <aside class="contentRelated">
   <small class="post_meta">I wrote this in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time> and put it in <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a>. It was very hard to finish it, because I kept going on searches for new things to install. I’ll be sure to keep it up-to-date.</small>
   <h2 class="post_heading minor2">Updates</h2>
-  <small class="post_meta"><time class="meta_date" datetime="2013-11-12">Nov. 12, 2013</time>: Added <em>FindKeyConflicts</em> to the collection of packages.</small>
+  <ul class="post_list">
+    <li class="post_meta"><time class="meta_date" datetime="2013-11-12"><a href="#update-2013-11-12">Nov. 12, 2013</a></time>: Added <em>FindKeyConflicts</em> to the collection of packages.</li>
+    <li class="post_meta"><time class="meta_date" datetime="2013-12-28"><a href="#update-2013-12-28">Dec. 28, 2013</a></time>: Added the <em>Spacegray</em> theme.</li>
+  </ul>
 </aside>
