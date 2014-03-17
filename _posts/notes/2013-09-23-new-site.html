@@ -1,22 +1,22 @@
 ---
 layout: post
 title: New Site
+subtitle: Built with Jekyll and hosted on GitHub
+type: notes
 date: 2013-09-23 17:33
 category: notes
 description: I&rsquo;m making a thing and nobody told me it should be completed in order to be online.
 ---
 
-<header class="post_section post_section-header">
-  <h1 class="post_title major6">New Site <span class="post_subtitle major3">built with Jekyll and hosted on GitHub</span></h1>
-  {% include post_meta-top.html %}
-</header>
+{% include post_header.html %}
 
-<div class="post_section post_section-entry">
+<div class="post_entry addair">
   <p>This is a place to poke at code and screw up things. One poke-worthy thing I keep hearing about is Jekyll, so I’m giving it a try. This also gave me <a href="/frontendings/installing-jekyll-on-windows">something to write about</a>, so I can play with typography and colors.</p>
   <p>I thought it would be a good idea to separate the whole website into two main categories—one for general stuff, and another for front-end stuff (that’s what I do).</p>
   <p>In case you’re reading this soon after I post it, bear in mind that I’m making it up as I go along. Hell, I haven’t even tested the thing yet.</p>
 </div>
 
-<aside class="contentRelated">
+<aside class="post_related">
+  {% include post_share.html %}
   <small class="post_meta">The first from the <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a>, <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>.</small>
 </aside>

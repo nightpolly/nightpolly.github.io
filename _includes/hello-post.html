@@ -1,0 +1,15 @@
+<header class="hello-{{ page.type }}">
+  <div class="container addair">
+    <nav class="nav-primary" role="navigation">
+      <i class="icon-main-menu" aria-hidden="true"></i>
+      <ul>
+        <li><a href="/"><i class="icon-main-home" aria-hidden="true"></i>home</a></li>
+        <li><a href="/frontendings"><i class="icon-main-frontendings" aria-hidden="true"></i>frontendings</a></li>
+        <li><a href="/notes"><i class="icon-main-notes" aria-hidden="true"></i>notes</a></li>
+      </ul>
+    </nav>
+    {% if page.description %}
+    <p class="pg_description">This post is about: <em>{{ page.description }}</em></p>
+    {% endif %}
+  </div>
+</header>

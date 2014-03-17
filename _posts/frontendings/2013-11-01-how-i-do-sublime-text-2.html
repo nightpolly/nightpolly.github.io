@@ -1,29 +1,30 @@
 ---
 layout: post
 title: How I Do Sublime Text 2
+type: frontendings
 date: 2013-11-01 14:27
+lastmod: 2013-12-28 23:15
 category: frontendings
+label: list post
 description: My Sublime Text 2 setup&mdash;settings and installed packages.
 ---
 
-<header class="post_section post_section-header">
-  <h1 class="post_title major6">How I Do Sublime Text 2</h1>
-  {% include post_meta-top.html %}
-</header>
+{% include post_header.html %}
 
-<div class="post_section post_section-entry">
-  <p class="post_lede post_block"><a href="http://www.sublimetext.com/" title="www.sublimetext.com">Sublime Text</a> is an extremely customizable text editor, and it’s my code editor of choice. All of its settings are stored in JSON (sort of) files, and you can enhance it even further with external packages.</p>
-  <h2 class="post_heading perfect4">Sublime Text Packages</h2>
+<div class="post_entry addair">
+  <p class="post_lede"><a href="http://www.sublimetext.com/" title="www.sublimetext.com">Sublime Text</a> is an extremely customizable text editor, and it’s my code editor of choice. All of its settings are stored in JSON (sort of) files, and you can enhance it even further with external packages.</p>
+  <h2 class="post_heading perfect4"><a href="#goto:ST-packages" id="goto:ST-packages">Sublime Text Packages</a></h2>
   <p>They’re plugins you can install to suit your workflow, the languages you work with, your UI preferences. You can practically make Sublime Text your own personal code editor.</p>
   <h3 class="post_heading minor3">Essential</h3>
   <p><a href="https://sublime.wbond.net/" title="sublime.wbond.net">Package Control</a> is the easiest way to find and manage packages. The website got a fresh new design recently and, if you’re anything like me, you’d love to spend some time browsing around. There is always cool stuff there.</p>
+  <hr>
   <p><a href="https://github.com/titoBouzout/SideBarEnhancements" title="github.com/titoBouzout/SideBarEnhancements">SideBarEnhancements</a> gives you the context menu that’s missing from Sublime’s sidebar. It has the basic options you’d expect, but also allows you to do things that normally can’t be done inside the editor: move a file to a different folder, rename it, copy its name or path, etc.</p>
   <p><a href="https://github.com/skuroda/Sublime-AdvancedNewFile" title="github.com/skuroda/Sublime-AdvancedNewFile">AdvancedNewFile</a> allows you to create files right where you need them. Bring up the input field with a key binding, and type the file path and name. If you specify a directory that doesn’t exist, it will be created for you.</p>
   <h3 class="post_heading minor3">Lookin’ good</h3>
   <p class="post_note">Sublime Text has some nice color schemes for you to choose from, but you can also install more, or even write your own.</p>
   <p><a href="https://github.com/daylerees/colour-schemes" title="github.com/daylerees/colour-schemes">Dayle Rees Color Schemes</a> is a very popular collection of color schemes, and <a href="http://chriskempson.github.io/base16/" title="chriskempson.github.io/base16">base16</a> is worth a try, too. I also use <a href="https://github.com/sindresorhus/focus" title="github.com/sindresorhus/focus">Focus</a>, which is useful when you want to only concentrate on the content.</p>
-  <div class="post_update" id="update-2013-12-28">
-    <small class="post_meta">Update: <time class="meta_date" datetime="2013-12-28">Dec. 28, 2013</time></small>
+  <div class="post_update" id="goto:update-2013-12-28">
+    <small class="post_meta"><time class="meta_date" datetime="2013-12-28"><i class="icon-content-calendar" aria-hidden="true"></i> Dec. 28, 2013</time></small>
     <p><a href="http://kkga.github.io/spacegray/" title="kkga.github.io/spacegray">Spacegray</a> is a beautiful UI theme for Sublime Text. Search for “Theme - Spacegray” in Package Control to try it.</p>
   </div>
   <h3 class="post_heading minor3">Power-coding</h3>
@@ -55,11 +56,11 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
   <h3 class="post_heading minor3">Other</h3>
   <p><a href="https://github.com/condemil/Gist" title="github.com/condemil/Gist">Gist</a> is a plugin for creating, well, gists—just select some code and hit the keyboard shortcut. You can also open and insert gists you already have on GitHub.</p>
   <p><a href="https://github.com/Azd325/sublime-text-caniuse" title="github.com/Azd325/sublime-text-caniuse">Sublime Text Caniuse</a> is helpful if you need a reminder of which browser supports what CSS property.</p>
-  <div class="post_update" id="update-2013-11-12">
-    <small class="post_meta">Update: <time class="meta_date" datetime="2013-11-12">Nov. 12, 2013</time></small>
+  <div class="post_update" id="goto:update-2013-11-12">
+    <small class="post_meta"><time class="meta_date" datetime="2013-11-12"><i class="icon-content-calendar" aria-hidden="true"></i> Nov. 12, 2013</time></small>
     <p><a href="https://github.com/skuroda/FindKeyConflicts" title="github.com/skuroda/FindKeyConflicts">FindKeyConflicts</a> can help you locate keyboard shortcuts mapped to more than one package.</p>
   </div>
-  <h2 class="post_heading perfect4">Settings</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:ST-settings" id="goto:ST-settings">Settings</a></h2>
   <p>You can access your settings file from Preferences &rarr; Settings - User.</p>
   <p class="post_note">The defaults are a handy reference, with comments and everything: Preferences &rarr; Settings - Default. You can’t put comments in the <em>user</em> settings file though (well you can, but they’ll be lost when you close it).</p>
   <p>So here’s what my settings look like (most are self-explanatory and / or described in the default settings file; some depend on external packages and other stuff):</p>
@@ -109,17 +110,18 @@ section.main>(h1>a)+ul.contents>li*4>a{Part $}
   </div>
   <p class="post_note">I’ve also backed this up <a href="https://gist.github.com/nightpolly/7275557" title="Preferences.sublime-settings gist">on GitHub</a>.</p>
   <p>A few notes:</p>
-  <ul class="post_list post_list-unordered">
+  <ul class="post_list">
     <li><code>"color_scheme": "Packages/awesome/LastNight.tmTheme"</code><br>There’s no such directory in <em>Packages</em>—I just like to change my color scheme from time to time, so I’ve copied all my favorites into a single folder (<code>awesome</code>) for quick access. <em>LastNight</em> is from <a href="https://github.com/daylerees/colour-schemes" title="github.com/daylerees/colour-schemes">Dayle Rees Color Schemes</a>.</li>
     <li><code>directwrite</code> in <code>font_options</code> is Windows-only. Enabling it improves the text rendering.</li>
   </ul>
 </div>
 
-<aside class="contentRelated">
+<aside class="post_related">
+  {% include post_share.html %}
   <small class="post_meta">I wrote this in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time> and put it in <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a>. It was very hard to finish it, because I kept going on searches for new things to install. I’ll be sure to keep it up-to-date.</small>
-  <h2 class="post_heading minor2">Updates</h2>
-  <ul class="post_list">
-    <li class="post_meta"><time class="meta_date" datetime="2013-11-12"><a href="#update-2013-11-12">Nov. 12, 2013</a></time>: Added <em>FindKeyConflicts</em> to the collection of packages.</li>
-    <li class="post_meta"><time class="meta_date" datetime="2013-12-28"><a href="#update-2013-12-28">Dec. 28, 2013</a></time>: Added the <em>Spacegray</em> theme.</li>
+  <h2 class="post_heading minor2">Updates:</h2>
+  <ul class="post_list addair">
+    <li><time class="meta_date" datetime="2013-11-12"><a href="#goto:update-2013-11-12">Nov. 12, 2013</a></time>: Added <em>FindKeyConflicts</em> to the collection of packages.</li>
+    <li><time class="meta_date" datetime="2013-12-28"><a href="#goto:update-2013-12-28">Dec. 28, 2013</a></time>: Added the <em>Spacegray</em> theme.</li>
   </ul>
 </aside>

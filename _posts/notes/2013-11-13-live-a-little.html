@@ -1,17 +1,15 @@
 ---
 layout: post
 title: "&lsquo;Live a Little&rsquo;"
+type: notes
 date: 2013-11-13 14:02
 category: notes
 description: The most useless advice my friends ever gave me.
 ---
 
-<header class="post_section post_section-header">
-  <h1 class="post_title major6"><q>Live a Little</q></h1>
-  {% include post_meta-top.html %}
-</header>
+{% include post_header.html %}
 
-<div class="post_section post_section-entry">
+<div class="post_entry addair">
   <p>I spend a large amount of my free time in front of a screen, and I often have a hard time explaining to people why that is. Or rather, why it appeals to me, even though it may not appeal to them. I get reactions like <q>You should get out more,</q> or <q>Have some fun once in a while,</q> or even the occasional <q>Technology is evil and corrupts our children.</q></p>
   <p>To each his own, I guess, though it’s a little different with friends. It’s harder to argue with people who genuinely believe they’re helping. But forcing your own values on someone is still an act of a close-minded idiot, even if you do have the best of intentions.</p>
   <p>Let me clarify something here—I <em>do</em> go out. I’ll run/climb/bike through any place that looks even remotely interesting. I’ll go anywhere and do anything, if I can afford it. I’m not denying the importance of new experiences that challenge your way of thinking.</p>
@@ -25,6 +23,7 @@ description: The most useless advice my friends ever gave me.
   <p>Mr. Sivers and I have both decided that creating stuff makes us better human beings. But that’s a personal thing, an opinion as valid as any other. So as much as I love answering the question <q>Why do you sit on your desk so much</q> with <q>Why don’t you sit on your desk more,</q> I think I’ll just print that quote and keep it in my pocket.</p>
 </div>
 
-<aside class="contentRelated">
+<aside class="post_related">
+  {% include post_share.html %}
   <small class="post_meta">Posted in <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a> in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>, after a nice run and a big breakfast.</small>
 </aside>

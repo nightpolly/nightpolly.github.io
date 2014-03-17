@@ -1,0 +1,16 @@
+<header class="post_header">
+  <small class="post_meta">
+    <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}" title="date written">{% assign m = page.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ page.date | date: "%b" }}. {% endcase %}{{ page.date | date: "%d" | plus:'0' }}, {{ page.date | date: "%Y" }}</time>
+    {% if page.category %}
+    &middot; <a class="meta_category" href="/{{ page.category }}" title="post category">{{ page.category }}</a>
+    {% endif %}
+    {% if page.lastmod %}
+    &middot; <span class="meta_lastmod">last updated: <time datetime="{{ page.lastmod | date_to_xmlschema }}" title="last updated">{% assign m = page.lastmod | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ page.lastmod | date: "%b" }}. {% endcase %}{{ page.lastmod | date: "%d" | plus:'0' }}, {{ page.lastmod | date: "%Y" }}</time></span>
+    {% endif %}
+  </small>
+
+  <h1 class="post_title major6">{{ page.title }}</h1>
+  {% if page.subtitle %}
+  <span class="post_subtitle major3">{{ page.subtitle }}</span>
+  {% endif %}
+</header>

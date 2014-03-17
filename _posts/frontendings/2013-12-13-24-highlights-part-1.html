@@ -1,29 +1,30 @@
 ---
 layout: post
 title: 24 Highlights, Part 1
+subtitle: Creating a working lightbox
+type: frontendings
 date: 2013-12-13 03:15
+lastmod: 2013-12-22 11:33
 category: frontendings
 description: Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 1 of 2.
 ---
 
-<header class="post_section post_section-header">
-  <h1 class="post_title major6">24 Highlights, Part 1</h1>
-  <span class="post_subtitle major3">Creating a working lightbox</span>
-  {% include post_meta-top.html %}
-</header>
+{% include post_header.html %}
 
-<div class="post_section post_section-entry">
+<div class="post_entry addair">
   <p class="post_lede">Everything we need to make a CSS-only lightbox is the <code>:target</code> pseudo-class. In addition, we also have CSS transitions and flexbox—to make everything look like creating it took no effort whatsoever.</p>
   <p>In the spirit of counting days in anticipation of Christmas, I went back to some of the books I read this year, pulled 24 highlighted passages, and arranged them into an Advent calendar. Or, you know, a bunch of squares with numbers in them.</p>
-  <div class="post_demoPeek post_demoPeek-hasImage">
-    <img class="demoPeek_image" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
-    <span class="demoPeek_container"><a class="demoPeek_link" href="../demos/24-highlights/" title="demo page: 24 Highlights"><i class="icon icon-demo"></i> view demo</a></span>
+  <div class="post_demo">
+    <a class="demo_link" href="../demos/24-highlights/" title="demo page: 24 Highlights">
+      <img class="demo_img" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
+      <span><i class="icon-content-demo"></i> live demo</span>
+    </a>
   </div>
   <p class="post_note">Fully supported in <a href="https://www.google.com/intl/en/chrome/browser/" title="download Google Chrome">Chrome</a> (31.0) and <a href="http://www.opera.com/" title="download Opera">Opera</a> (18.0). Works but isn’t pretty in the other major browsers. Doesn’t work in IE 8 and below.</p>
   <p class="post_note">The source files are <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="files for the finished page">on GitHub</a>.</p>
   <p>Anyway, I enjoyed coding my little demo page, and I’ll try to break that down into steps. This is Part 1 of 2, and it’s mostly about how the lightboxes are going to work and the page’s structure.</p>
   <p>If you just want to see the (fairly modest) result from this part, I’ve put it in a <a href="../demos/24-highlights/part-1.html" title="final result from Part 1">separate page</a>.</p>
-  <h2 class="post_heading perfect4">The HTML</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:the-html" id="goto:the-html">The HTML</a></h2>
   <p>The main container of the demo is <code>.container</code>. Inside it, there’s a header and an ordered list with 24 list items.</p>
   <div class="post_code">
     <p class="code_title">HTML</p>
@@ -83,7 +84,7 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
   </div>
   <p>So, we have a <code>.show</code> link whose target the lightbox is. But also inside the lightbox there’s a <code>.hide</code> link, which points to the <code>.show</code> link.</p>
   <p>The result of that is, if you take the demo for example: The original link to the page is <a href="../demos/24-highlights/">../demos/24-highlights/</a>. Say you like the highlight titled <em>Immortal</em> and you want to share it—use its unique url: <a href="../demos/24-highlights/#immortal">../demos/24-highlights/<strong>#immortal</strong></a>. After you close the highlight, you can still see which one it was—the square with the number 4 looks different (and the url points to <a href="../demos/24-highlights/#dec4">../demos/24-highlights/<strong>#dec4</strong></a>).</p>
-  <h2 class="post_heading perfect4">The CSS</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:the-css" id="goto:the-css">The CSS</a></h2>
   <p class="post_note">To keep it simple, I haven’t included fallbacks and browser prefixes in the code below.</p>
   <h3 class="post_heading minor3">Reset &amp; Normalize</h3>
   <p>Reseting styles is a matter of personal preferences and/or context. I’ve included a tiny normalize section in the CSS for the demo.</p>
@@ -217,22 +218,23 @@ description: Making a lightbox with CSS&mdash;an experiment with :target and fle
 {% endhighlight %}
   </div>
   <p>That’s all for now—we have the <a href="../demos/24-highlights/part-1.html" title="final result from Part 1">basic structure</a>. The second part with the more colorful stuff will be coming in a few days.</p>
-  <div class="post_update" id="update-2013-12-22">
-    <small class="post_meta">Update: <time class="meta_date" datetime="2013-12-22">Dec. 22, 2013</time></small>
+  <div class="post_update" id="goto:update-2013-12-22">
+    <small class="post_meta"><time class="meta_date" datetime="2013-12-22"><i class="icon-content-calendar" aria-hidden="true"></i> Dec. 22, 2013</time></small>
     <p>Check out <a href="/frontendings/24-highlights-part-2/" title="next part of the article">Part 2</a>!</p>
   </div>
 </div>
 
-<aside class="contentRelated">
+<aside class="post_related">
+  {% include post_share.html %}
   <small class="post_meta">This was fun. Written in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time> in <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a>.</small>
-  <h2 class="post_heading major2">Some helpful resources</h2>
-  <ul class="post_list post_list-unordered">
+  <h2 class="post_heading major2">Some helpful resources:</h2>
+  <ul class="post_list addair">
     <li><cite><a href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html">The Ultimate Flexbox Cheat Sheet</a></cite>—by <a href="https://twitter.com/sfioritto" title="@sfioritto">Sean Fioritto</a></li>
     <li><cite><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">Using CSS flexible boxes</a></cite>—Mozilla Developer Network</li>
     <li><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">:target</a></cite>—again from MDN</li>
   </ul>
-  <h2 class="post_heading minor2">Updates</h2>
-  <ul class="post_list">
-    <li class="post_meta"><time class="meta_date" datetime="2013-12-22"><a href="#update-2013-12-22">Dec. 22, 2013</a></time>: Added a link to Part 2 of the article.</li>
+  <h2 class="post_heading minor2">Updates:</h2>
+  <ul class="post_list addair">
+    <li><time class="meta_date" datetime="2013-12-22"><a href="#goto:update-2013-12-22">Dec. 22, 2013</a></time>: Added a link to Part 2 of the article.</li>
   </ul>
 </aside>

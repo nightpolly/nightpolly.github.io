@@ -1,31 +1,29 @@
 ---
 layout: post
 title: Installing Jekyll on Windows
+subtitle: And getting syntax highlighting to work
+type: frontendings
 date: 2013-09-17 22:15
 category: frontendings
 description: A beginners&rsquo; guide to installing Jekyll on Windows, along with the Pygments syntax highlighter.
 ---
 
-<header class="post_section post_section-header">
-  <h1 class="post_title major6">Installing Jekyll on Windows <span class="post_subtitle major3">and getting syntax highlighting to work</span></h1>
-  {% include post_meta-top.html %}
-</header>
+{% include post_header.html %}
 
-<div class="post_section post_section-entry">
-  <p class="post_lede post_block">The goal here is to get Jekyll installed on a Windows machine, and have the option to use Pygments within it (for syntax highlighting). These are actually my own notes, which I took while going through the process. This is a guide for complete beginners. The only thing you need to know is where to find your cmd.exe.</p>
-  <h2 class="post_heading perfect4">A few words on what we’re dealing with</h2>
-  <p><a href="#meat-n-potatoes" title="Skip the descriptions">Get to the good part</a> if you’re in a hurry.</p>
+<div class="post_entry addair">
+  <p class="post_lede">The goal here is to get Jekyll installed on a Windows machine, and have the option to use Pygments within it (for syntax highlighting). These are actually my own notes, which I took while going through the process. This is a guide for complete beginners. The only thing you need to know is where to find your cmd.exe.</p>
+  <h2 class="post_heading perfect4"><a href="#goto:intro" id="goto:intro">A few words on what we’re dealing with</a></h2>
+  <p><a href="#goto:meat-n-potatoes" title="Skip the descriptions">Get to the good part</a> if you’re in a hurry.</p>
   <p>I decided to put this on the Internet because there aren’t as many tutorials for Windows on that subject, as there are for Mac. That’s not to say there aren’t <em>any</em> though—below is a small list of such tutorials, you can check them out as well.</p>
   <h3 class="post_heading minor3">What is Jekyll? What do we use Pygments for?</h3>
   <p>Jekyll is a static site generator. It basically takes your Markdown, Textile, or HTML files as content, CSS as layout, and transforms them into a static website. It’s really easy to use, and it also has <a href="http://jekyllrb.com/docs/home/" title="Jekyll’s docs">extensive documentation</a>.</p>
   <p>Among other useful things, Jekyll also provides you with a simple way to publish code snippets on your website. To make the code pretty, it utilizes Pygments—a syntax highlighter written in Python. You can read more about what it does and see some demos on <a href="http://pygments.org/" title="pygments.org">Pygments’ website</a>.</p>
   <h3 class="post_heading minor3">Other posts on how to install Jekyll on Windows</h3>
-  <ul class="post_list post_list-unordered post_block">
+  <ul class="post_list">
     <li><cite><a href="http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html">Running Jekyll on Windows</a></cite>, September 1, 2011</li>
     <li><cite><a href="http://yizeng.me/2013/05/10/setup-jekyll-on-windows/">Setup Jekyll on Windows</a></cite>, May 10, 2013</li>
-    <li><cite><a href="http://bryanwweber.com/2013/07/installing-jekyll-on-windows/">Installing Jekyll on Windows</a></cite>, July 15, 2013</li>
   </ul>
-  <h2 class="post_heading perfect4"><a id="meat-n-potatoes" href=""></a>The meat and potatoes</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:meat-n-potatoes" id="goto:meat-n-potatoes">The meat and potatoes</a></h2>
   <h3 class="post_heading minor3">Ruby</h3>
   <p>To check whether you already have Ruby on your computer (not very likely on a Windows), open cmd.exe and type:</p>
   <div class="post_code">
@@ -114,7 +112,7 @@ gem uninstall pygments.rb -v "=0.5.2"
 gem install pygments.rb -v "=0.5.0"
 {% endhighlight %}
   </div>
-  <h2 class="post_heading perfect4">Test it</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:test-it" id="goto:test-it">Test it</a></h2>
   <p>If you want to test if everything is working as expected, create a sample Jekyll site. If you are yet to learn how to use Jekyll, no worries—for this test at least Jekyll will pretty much do all of the hard work. Also, don’t go buying hosting services just yet. You can use Jekyll locally and preview your site in localhost.</p>
   <p>Make a folder, say <strong>D:\jekyll-test</strong>. Open cmd.exe in that folder and tell Jekyll to create your new site:</p>
   <div class="post_code">
@@ -133,14 +131,15 @@ jekyll serve -w
   <p>The <code>-w</code> part above (or <code>--watch</code>) means that Jekyll is going to monitor your files for changes and update the generated site if it finds something new.</p>
   <p>Now you can see your site at <a href="http://localhost:4000/">localhost:4000</a>. Conveniently, in that demo you have some sample code, so you can see the syntax highlighting in action.</p>
   <p class="post_note">Check out the <em>_config.yml</em> file in <strong>my-new-site</strong>. This is your site’s configuration file. You can see the defaults in <a href="http://jekyllrb.com/docs/configuration/">Jekyll’s documentation</a>.</p>
-  <h2 class="post_heading perfect4">Conclusion</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:conclusion" id="goto:conclusion">Conclusion</a></h2>
   <p>I hope your test was successful! There’s much more to learn about Jekyll than those few commands. I myself just started playing with it, and it seems pretty neat. Also, GitHub Pages are powered by it, so you can host your website on GitHub for free.</p>
 </div>
 
-<aside class="contentRelated">
+<aside class="post_related">
+  {% include post_share.html %}
   <small class="post_meta">This guide was neatly stacked into <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a> in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time>.</small>
-  <h2 class="post_heading major2">Main links from the article</h2>
-  <ul class="post_list post_list-unordered">
+  <h2 class="post_heading major2">Main links from the article:</h2>
+  <ul class="post_list addair">
     <li><cite><a href="http://rubyinstaller.org/downloads/">RubyInstaller for Windows: Downloads</a></cite>—get Ruby and Ruby Development Kit</li>
     <li><cite><a href="http://jekyllrb.com/docs/home/">Jekyll: Welcome</a></cite>—Jekyll documentation</li>
     <li><cite><a href="http://www.python.org/getit/">Download Python</a></cite></li>

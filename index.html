@@ -1,45 +1,48 @@
 ---
 layout: default
-type: home
 title: nightpolly.com
+type: home
+changefreq: weekly
 description: Hi. My name is Polly, I&rsquo;m a web designer and front-end developer. I come here to practice thinking&mdash;the most recent results of that below. You can also find me on <a href="https://twitter.com/NightPolly" title="@nightpolly">Twitter</a>.
 ---
 
-<ul class="ptsList">
+<ul class="posts container">
   {% for post in paginator.posts %}
   <li class="post">
+    <small class="post_meta">
+      <time class="meta_date" datetime="{{ post.date | date_to_xmlschema }}">{% assign m = post.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ post.date | date: "%b" }}. {% endcase %}{{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}</time> &middot; <a class="meta_category" href="/{{ post.category }}">{{ post.category }}</a>
+      {% if post.label %}
+      &middot; <span class="meta_label">{{ post.label }}</span>
+      {% endif %}
+    </small>
     <h2 class="post_title perfect4">
       <a href="{{ post.url }}">{{ post.title }}</a>
     </h2>
-    <small class="post_meta post_meta-noflow">
-      <time class="meta_date" datetime="{{ post.date | date_to_xmlschema }}"><i class="icon icon-date" aria-hidden="true"></i> {% assign m = post.date | date: "%B" %}{% case m %}{% when 'May' or 'June' or 'July' %}{{ m }} {% when 'September' %}Sept. {% else %}{{ post.date | date: "%b" }}. {% endcase %}{{ post.date | date: "%d" | plus:'0' }}, {{ post.date | date: "%Y" }}</time>
-      <a class="meta_category" href="/{{ post.category }}"><i class="icon icon-{{ post.category }}" aria-hidden="true"></i> {{ post.category }}</a>
-    </small>
     {% if post.description %}
-    <p class="post_description">{{ post.description }}</p>
+    <p class="post_description addair"><em>{{ post.description }}</em></p>
     {% endif %}
   </li>
   {% endfor %}
 </ul>
 
-<div class="contentRelated clearfix">
-  <span class="posts_pgNumber">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+<div class="pagination container">
+  <span class="pagination_pgnum">page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
-  <div class="posts_pgLinks">
+  <div class="pagination_links">
     {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-    <a class="posts_pgLink prev" href="/">previous</a>
+    <a class="pagination_link-prev btn" href="/">newer</a>
     {% else %}
-    <a class="posts_pgLink prev" href="{{ paginator.previous_page_path }}">previous</a>
+    <a class="pagination_link-prev btn" href="{{ paginator.previous_page_path }}">newer</a>
     {% endif %}
     {% else %}
-    <span class="posts_pgLink prev">previous</span>
+    <span class="pagination_link-prev btn-disabled">newer</span>
     {% endif %}
 
     {% if paginator.next_page %}
-    <a class="posts_pgLink next" href="{{ paginator.next_page_path }}">next</a>
+    <a class="pagination_link-next btn" href="{{ paginator.next_page_path }}">older</a>
     {% else %}
-    <span class="posts_pgLink next">next</span>
+    <span class="pagination_link-next btn-disabled">older</span>
     {% endif %}
   </div>
 </div>
