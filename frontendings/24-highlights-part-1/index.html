@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//www.google-analytics.com">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 24 Highlights, Part 1 |  nightpolly.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 1 of 2."> 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,300,300italic,400italic,700,700italic|Anonymous+Pro:400,400italic,700,700italic">
+  <title>24 Highlights, Part 1 | nightpolly.com</title>
+  <meta name="description" content="Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 1 of 2.">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:300,300italic,700,700italic|Anonymous+Pro:400,400italic|Open+Sans:300italic,400italic,400,300">
   <link rel="stylesheet" href="/css/min/post.min.css">
-  <!--[if lt IE 9]><script src="/js/min/html5shiv.min.js"></script><![endif]-->
-
+  <link rel="alternate" href="http://nightpolly.com/feed.xml" type="application/atom+xml">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,45 +23,55 @@
   </script>
 </head>
 <body>
-
-  <header class="container pgHeader pgHeader-frontendings">
-  <h1 class="pgTitle minor2i">
-    <nav class="nav-breadcrumb" aria-label="You are here">
-      <ol class="nav_list">
-        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/" title="home page">nightpolly.com</a></li>
-        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/frontendings" title="post category">frontendings</a></li>
-      </ol>
+  <header class="hello-frontendings">
+  <div class="container addair">
+    <nav class="nav-primary" role="navigation">
+      <i class="icon-main-menu" aria-hidden="true"></i>
+      <ul>
+        <li><a href="/"><i class="icon-main-home" aria-hidden="true"></i>home</a></li>
+        <li><a href="/frontendings"><i class="icon-main-frontendings" aria-hidden="true"></i>frontendings</a></li>
+        <li><a href="/notes"><i class="icon-main-notes" aria-hidden="true"></i>notes</a></li>
+      </ul>
     </nav>
-  </h1>
-  
-  <p class="pgDescription">This post is about: <em class="pgDescription_q">Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 1 of 2.</em></p>
-  
+    
+    <p class="pg_description">This post is about: <em>Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 1 of 2.</em></p>
+    
+  </div>
 </header>
-
 
   <article class="container post">
-    <header class="post_section post_section-header">
-  <h1 class="post_title major6">24 Highlights, Part 1</h1>
-  <span class="post_subtitle major3">Creating a working lightbox</span>
-  <small class="post_meta post_meta-noflow">
-  <time class="meta_date" datetime="2013-12-13T03:15:00+02:00" title="date written"><i class="icon icon-date" aria-hidden="true"></i> Dec. 13, 2013</time>
-  <a class="meta_category" href="/frontendings" title="post category"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
-</small>
+    <header class="post_header">
+  <small class="post_meta">
+    <time class="meta_date" datetime="2013-12-13T03:15:00+02:00" title="date written">Dec. 13, 2013</time>
+    
+    &middot; <a class="meta_category" href="/frontendings" title="post category">frontendings</a>
+    
+    
+    &middot; <span class="meta_lastmod">last updated: <time datetime="2013-12-22T11:33:00+02:00" title="last updated">Dec. 22, 2013</time></span>
+    
+  </small>
 
+  <h1 class="post_title major6">24 Highlights, Part 1</h1>
+  
+  <span class="post_subtitle major3">Creating a working lightbox</span>
+  
 </header>
 
-<div class="post_section post_section-entry">
+
+<div class="post_entry addair">
   <p class="post_lede">Everything we need to make a CSS-only lightbox is the <code>:target</code> pseudo-class. In addition, we also have CSS transitions and flexbox—to make everything look like creating it took no effort whatsoever.</p>
   <p>In the spirit of counting days in anticipation of Christmas, I went back to some of the books I read this year, pulled 24 highlighted passages, and arranged them into an Advent calendar. Or, you know, a bunch of squares with numbers in them.</p>
-  <div class="post_demoPeek post_demoPeek-hasImage">
-    <img class="demoPeek_image" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
-    <span class="demoPeek_container"><a class="demoPeek_link" href="../demos/24-highlights/" title="demo page: 24 Highlights"><i class="icon icon-demo"></i> view demo</a></span>
+  <div class="post_demo">
+    <a class="demo_link" href="../demos/24-highlights/" title="demo page: 24 Highlights">
+      <img class="demo_img" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
+      <span><i class="icon-content-demo"></i> live demo</span>
+    </a>
   </div>
   <p class="post_note">Fully supported in <a href="https://www.google.com/intl/en/chrome/browser/" title="download Google Chrome">Chrome</a> (31.0) and <a href="http://www.opera.com/" title="download Opera">Opera</a> (18.0). Works but isn’t pretty in the other major browsers. Doesn’t work in IE 8 and below.</p>
   <p class="post_note">The source files are <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="files for the finished page">on GitHub</a>.</p>
   <p>Anyway, I enjoyed coding my little demo page, and I’ll try to break that down into steps. This is Part 1 of 2, and it’s mostly about how the lightboxes are going to work and the page’s structure.</p>
   <p>If you just want to see the (fairly modest) result from this part, I’ve put it in a <a href="../demos/24-highlights/part-1.html" title="final result from Part 1">separate page</a>.</p>
-  <h2 class="post_heading perfect4">The HTML</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:the-html" id="goto:the-html">The HTML</a></h2>
   <p>The main container of the demo is <code>.container</code>. Inside it, there’s a header and an ordered list with 24 list items.</p>
   <div class="post_code">
     <p class="code_title">HTML</p>
@@ -117,7 +128,7 @@
   </div>
   <p>So, we have a <code>.show</code> link whose target the lightbox is. But also inside the lightbox there’s a <code>.hide</code> link, which points to the <code>.show</code> link.</p>
   <p>The result of that is, if you take the demo for example: The original link to the page is <a href="../demos/24-highlights/">../demos/24-highlights/</a>. Say you like the highlight titled <em>Immortal</em> and you want to share it—use its unique url: <a href="../demos/24-highlights/#immortal">../demos/24-highlights/<strong>#immortal</strong></a>. After you close the highlight, you can still see which one it was—the square with the number 4 looks different (and the url points to <a href="../demos/24-highlights/#dec4">../demos/24-highlights/<strong>#dec4</strong></a>).</p>
-  <h2 class="post_heading perfect4">The CSS</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:the-css" id="goto:the-css">The CSS</a></h2>
   <p class="post_note">To keep it simple, I haven’t included fallbacks and browser prefixes in the code below.</p>
   <h3 class="post_heading minor3">Reset &amp; Normalize</h3>
   <p>Reseting styles is a matter of personal preferences and/or context. I’ve included a tiny normalize section in the CSS for the demo.</p>
@@ -245,48 +256,41 @@
 </code></pre></div>
   </div>
   <p>That’s all for now—we have the <a href="../demos/24-highlights/part-1.html" title="final result from Part 1">basic structure</a>. The second part with the more colorful stuff will be coming in a few days.</p>
-  <div class="post_update" id="update-2013-12-22">
-    <small class="post_meta">Update: <time class="meta_date" datetime="2013-12-22">Dec. 22, 2013</time></small>
+  <div class="post_update" id="goto:update-2013-12-22">
+    <small class="post_meta"><time class="meta_date" datetime="2013-12-22"><i class="icon-content-calendar" aria-hidden="true"></i> Dec. 22, 2013</time></small>
     <p>Check out <a href="/frontendings/24-highlights-part-2/" title="next part of the article">Part 2</a>!</p>
   </div>
 </div>
 
-<aside class="contentRelated">
+<aside class="post_related">
+  <p class="post_share"><a href="https://twitter.com/intent/tweet?text=24%20Highlights,%20Part%201%20by%20@nightpolly:%20http://nightpolly.com/frontendings/24-highlights-part-1/">Comment or share</a> <i class="icon-hi-twitter" aria-hidden="true"></i></p>
+
   <small class="post_meta">This was fun. Written in <time class="meta_date" datetime="2013-12-13T03:15:00+02:00">December 2013</time> in <a class="meta_category" href="/frontendings">frontendings</a>.</small>
-  <h2 class="post_heading major2">Some helpful resources</h2>
-  <ul class="post_list post_list-unordered">
+  <h2 class="post_heading major2">Some helpful resources:</h2>
+  <ul class="post_list addair">
     <li><cite><a href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html">The Ultimate Flexbox Cheat Sheet</a></cite>—by <a href="https://twitter.com/sfioritto" title="@sfioritto">Sean Fioritto</a></li>
     <li><cite><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">Using CSS flexible boxes</a></cite>—Mozilla Developer Network</li>
     <li><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">:target</a></cite>—again from MDN</li>
   </ul>
-  <h2 class="post_heading minor2">Updates</h2>
-  <ul class="post_list">
-    <li class="post_meta"><time class="meta_date" datetime="2013-12-22"><a href="#update-2013-12-22">Dec. 22, 2013</a></time>: Added a link to Part 2 of the article.</li>
+  <h2 class="post_heading minor2">Updates:</h2>
+  <ul class="post_list addair">
+    <li><time class="meta_date" datetime="2013-12-22"><a href="#goto:update-2013-12-22">Dec. 22, 2013</a></time>: Added a link to Part 2 of the article.</li>
   </ul>
 </aside>
 
   </article>
-
-  <footer class="container">
+  <footer class="contentinfo container" role="contentinfo">
   <nav class="nav-secondary" role="navigation">
-    <ul class="nav_list nav-secondary_list">
-      <li class="nav_item nav-secondary_item">
-        <a class="nav_link nav-secondary_link" href="/"><i class="icon icon-home" aria-hidden="true"></i> home</a>
-      </li>
-      <li class="nav_item nav-secondary_item">
-        <a class="nav_link nav-secondary_link" href="/frontendings"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
-      </li>
-      <li class="nav_item nav-secondary_item">
-        <a class="nav_link nav-secondary_link" href="/notes"><i class="icon icon-notes" aria-hidden="true"></i> notes</a>
-      </li>
+    <ul>
+      <li><a href="/"><i class="icon-main-home" aria-hidden="true"></i>home</a></li>
+      <li><a href="/frontendings"><i class="icon-main-frontendings" aria-hidden="true"></i>frontendings</a></li>
+      <li><a href="/notes"><i class="icon-main-notes" aria-hidden="true"></i>notes</a></li>
     </ul>
   </nav>
-  <div class="siteNotes">
-    <p class="minor2i">If you’re done here, come say hi on <a href="https://twitter.com/NightPolly" title="@nightpolly">Twitter</a>! Or <em>hi @ [mydomain]</em> if email is your thing.</p>
-    <p class="copyright">&copy; 2013. Standing on the shoulders of GitHub.</p>
-  </div>
+  <p class="contentinfo_etc">
+    <small class="contentinfo_copyright">&copy; 2014. Standing on the shoulders of GitHub.</small> &middot; <a href="https://twitter.com/NightPolly" title="@nightpolly">say hi! <i class="icon-hi-twitter" aria-hidden="true"></i></a> &middot; <a href="mailto:hi@nightpolly.com" title="hi@nightpolly.com">email <i class="icon-hi-email" aria-hidden="true"></i></a> &middot; <a href="/feed.xml" title="atom feed">new posts <i class="icon-hi-feed" aria-hidden="true"></i></a>
+  </p>
 </footer>
-
 
 </body>
 </html>

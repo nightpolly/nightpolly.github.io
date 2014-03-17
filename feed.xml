@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nightpolly.com</title>
+    <description>Polly Ivanova&amp;rsquo;s blog. Thoughts and front-end experiments published at times.</description>
+    <link>http://nightpolly.com/</link>
+    <atom:link href="http://nightpolly.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Total Perspective Vortex</title>
+      
+      <description>My personal year-end torture of choice.</description>
+      
+      <pubDate>Tue, 31 Dec 2013 22:20:00 +0200</pubDate>
+      <link>http://nightpolly.com/notes/the-total-perspective-vortex</link>
+      <guid isPermaLink="true">http://nightpolly.com/notes/the-total-perspective-vortex</guid>
+    </item>
+    
+    <item>
+      <title>24 Highlights, Part 2</title>
+      
+      <description>Making a lightbox with CSS&amp;mdash;an experiment with :target and flexbox. Part 2 of 2.</description>
+      
+      <pubDate>Sun, 22 Dec 2013 11:14:00 +0200</pubDate>
+      <link>http://nightpolly.com/frontendings/24-highlights-part-2</link>
+      <guid isPermaLink="true">http://nightpolly.com/frontendings/24-highlights-part-2</guid>
+    </item>
+    
+    <item>
+      <title>24 Highlights, Part 1</title>
+      
+      <description>Making a lightbox with CSS&amp;mdash;an experiment with :target and flexbox. Part 1 of 2.</description>
+      
+      <pubDate>Fri, 13 Dec 2013 03:15:00 +0200</pubDate>
+      <link>http://nightpolly.com/frontendings/24-highlights-part-1</link>
+      <guid isPermaLink="true">http://nightpolly.com/frontendings/24-highlights-part-1</guid>
+    </item>
+    
+    <item>
+      <title>&amp;lsquo;Live a Little&amp;rsquo;</title>
+      
+      <description>The most useless advice my friends ever gave me.</description>
+      
+      <pubDate>Wed, 13 Nov 2013 14:02:00 +0200</pubDate>
+      <link>http://nightpolly.com/notes/live-a-little</link>
+      <guid isPermaLink="true">http://nightpolly.com/notes/live-a-little</guid>
+    </item>
+    
+    <item>
+      <title>How I Do Sublime Text 2</title>
+      
+      <description>My Sublime Text 2 setup&amp;mdash;settings and installed packages.</description>
+      
+      <pubDate>Fri, 01 Nov 2013 14:27:00 +0200</pubDate>
+      <link>http://nightpolly.com/frontendings/how-i-do-sublime-text-2</link>
+      <guid isPermaLink="true">http://nightpolly.com/frontendings/how-i-do-sublime-text-2</guid>
+    </item>
+    
+    <item>
+      <title>SmartWeb, Bucharest</title>
+      
+      <description>My experience at Eastern Europe&amp;rsquo;s first front-end conference.</description>
+      
+      <pubDate>Thu, 24 Oct 2013 05:44:00 +0300</pubDate>
+      <link>http://nightpolly.com/notes/smartweb-bucharest</link>
+      <guid isPermaLink="true">http://nightpolly.com/notes/smartweb-bucharest</guid>
+    </item>
+    
+    <item>
+      <title>New Site</title>
+      
+      <description>I&amp;rsquo;m making a thing and nobody told me it should be completed in order to be online.</description>
+      
+      <pubDate>Mon, 23 Sep 2013 17:33:00 +0300</pubDate>
+      <link>http://nightpolly.com/notes/new-site</link>
+      <guid isPermaLink="true">http://nightpolly.com/notes/new-site</guid>
+    </item>
+    
+    <item>
+      <title>Installing Jekyll on Windows</title>
+      
+      <description>A beginners&amp;rsquo; guide to installing Jekyll on Windows, along with the Pygments syntax highlighter.</description>
+      
+      <pubDate>Tue, 17 Sep 2013 22:15:00 +0300</pubDate>
+      <link>http://nightpolly.com/frontendings/installing-jekyll-on-windows</link>
+      <guid isPermaLink="true">http://nightpolly.com/frontendings/installing-jekyll-on-windows</guid>
+    </item>
+    
+  </channel>
+</rss>

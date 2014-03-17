@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//www.google-analytics.com">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 24 Highlights, Part 2 |  nightpolly.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="description" content="Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 2 of 2."> 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,300,300italic,400italic,700,700italic|Anonymous+Pro:400,400italic,700,700italic">
+  <title>24 Highlights, Part 2 | nightpolly.com</title>
+  <meta name="description" content="Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 2 of 2.">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:300,300italic,700,700italic|Anonymous+Pro:400,400italic|Open+Sans:300italic,400italic,400,300">
   <link rel="stylesheet" href="/css/min/post.min.css">
-  <!--[if lt IE 9]><script src="/js/min/html5shiv.min.js"></script><![endif]-->
-
+  <link rel="alternate" href="http://nightpolly.com/feed.xml" type="application/atom+xml">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,48 +23,55 @@
   </script>
 </head>
 <body>
-
-  <header class="container pgHeader pgHeader-frontendings">
-  <h1 class="pgTitle minor2i">
-    <nav class="nav-breadcrumb" aria-label="You are here">
-      <ol class="nav_list">
-        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/" title="home page">nightpolly.com</a></li>
-        <li class="nav_item nav-breadcrumb_item"><a class="nav_link nav-breadcrumb_link" href="/frontendings" title="post category">frontendings</a></li>
-      </ol>
+  <header class="hello-frontendings">
+  <div class="container addair">
+    <nav class="nav-primary" role="navigation">
+      <i class="icon-main-menu" aria-hidden="true"></i>
+      <ul>
+        <li><a href="/"><i class="icon-main-home" aria-hidden="true"></i>home</a></li>
+        <li><a href="/frontendings"><i class="icon-main-frontendings" aria-hidden="true"></i>frontendings</a></li>
+        <li><a href="/notes"><i class="icon-main-notes" aria-hidden="true"></i>notes</a></li>
+      </ul>
     </nav>
-  </h1>
-  
-  <p class="pgDescription">This post is about: <em class="pgDescription_q">Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 2 of 2.</em></p>
-  
+    
+    <p class="pg_description">This post is about: <em>Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 2 of 2.</em></p>
+    
+  </div>
 </header>
-
 
   <article class="container post">
-    <header class="post_section post_section-header">
-  <h1 class="post_title major6">24 Highlights, Part 2</h1>
-  <span class="post_subtitle major3">Decorations and such</span>
-  <small class="post_meta post_meta-noflow">
-  <time class="meta_date" datetime="2013-12-22T11:14:00+02:00" title="date written"><i class="icon icon-date" aria-hidden="true"></i> Dec. 22, 2013</time>
-  <a class="meta_category" href="/frontendings" title="post category"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
-</small>
+    <header class="post_header">
+  <small class="post_meta">
+    <time class="meta_date" datetime="2013-12-22T11:14:00+02:00" title="date written">Dec. 22, 2013</time>
+    
+    &middot; <a class="meta_category" href="/frontendings" title="post category">frontendings</a>
+    
+    
+  </small>
 
+  <h1 class="post_title major6">24 Highlights, Part 2</h1>
+  
+  <span class="post_subtitle major3">Decorations and such</span>
+  
 </header>
 
-<div class="post_section post_section-entry">
+
+<div class="post_entry addair">
   <p class="post_lede">In <a href="/frontendings/24-highlights-part-1/" title="previous part of the article">Part 1</a>, I wrote about making a functional CSS-only lightbox. Now it’s time to play with a few of the gazillion ways to style it.</p>
-  <div class="post_demoPeek post_demoPeek-hasImage">
-    <img class="demoPeek_image" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
-    <span class="demoPeek_container"><a class="demoPeek_link" href="../demos/24-highlights/" title="demo page: 24 Highlights"><i class="icon icon-demo"></i> view demo</a></span>
+  <div class="post_demo">
+    <a class="demo_link" href="../demos/24-highlights/" title="demo page: 24 Highlights">
+      <img class="demo_img" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
+      <span><i class="icon-content-demo"></i> live demo</span>
+    </a>
   </div>
-  <p></p>
   <p class="post_note">Fully supported in <a href="https://www.google.com/intl/en/chrome/browser/" title="download Google Chrome">Chrome</a> (31.0) and <a href="http://www.opera.com/" title="download Opera">Opera</a> (18.0). Works but isn’t pretty in the other major browsers. Doesn’t work in IE 8 and below.</p>
   <p class="post_note">The source files are <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="files for the finished page">on GitHub</a>.</p>
   <p>Since this is a made-up project, and there aren’t any real requirements, I just picked a few things I wanted to play with: <code>clip-path</code>, pseudo-elements, and weird positioning. I realize the final result is way too specific to be used “as is”, and this really isn’t the point of it anyway—the individual parts are more likely to be useful on their own.</p>
   <p>First things first though, let’s make the content look better.</p>
-  <h2 class="post_heading perfect4">Typography and colors</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:typography-colors" id="goto:typography-colors">Typography and colors</a></h2>
   <p><a href="../demos/24-highlights/part-1.html" title="final result from Part 1">What we have from Part 1</a> looks a bit dull, so I’ve set up <a href="../demos/24-highlights/part-2.html" title="Part 2: typography and colors">a new page</a>, and added some additional styles for the text and backgrounds. The fonts used are from Google’s web fonts directory: <a href="https://www.google.com/fonts#UsePlace:use/Collection:Gentium+Book+Basic:400,700,400italic|Open+Sans:300" title="Google Fonts collection">Gentium Book Basic and Open Sans</a>.</p>
-  <h2 class="post_heading perfect4">Some unimportant images<br>
-  <span class="post_subheading minor3">(CSS sprites for screens with high pixel density)</span></h2>
+  <h2 class="post_heading perfect4"><a href="#goto:unimportant-images" id="goto:unimportant-images">Some unimportant images</a><br>
+  <span class="post_subheading">(CSS sprites for screens with high pixel density)</span></h2>
   <p>The book covers are more of a decoration than content in this case, so we’ll treat them as such and put them in the CSS instead of in the HTML. They still need to be recognizable though, so they’ll appear only when the viewport is big enough. We’ll also minimize the HTTP requests by combining all 24 covers into one 450px × 450px sprite image.</p>
   <p>We already set a basic (i.e. for small screens) style for <code>.item</code> in <a href="/frontendings/24-highlights-part-1/#styles-list-and-item" title="basic styles for .list and .item">Part 1</a>, so we’ll just add some properties for bigger screens, plus a <code>::before</code> pseudo-element to hold the book cover:</p>
   <div class="post_code">
@@ -124,8 +132,8 @@
 <span class="p">}</span>
 </code></pre></div>
   </div>
-  <h2 class="post_heading perfect4">Folded corners<br>
-  <span class="post_subheading minor3">(<code>clip-path</code> and more pseudo-elements)</span></h2>
+  <h2 class="post_heading perfect4"><a href="#goto:folded-corners" id="goto:folded-corners">Folded corners</a><br>
+  <span class="post_subheading">(<code>clip-path</code> and more pseudo-elements)</span></h2>
   <p>First, let’s create that little green thing that represents the back side of each square. It has linear gradient (shades of green) applied to it, and it’s positioned in the upper right corner:</p>
   <div class="post_code">
     <p class="code_title">CSS</p>
@@ -181,7 +189,7 @@
 <span class="p">}</span>
 </code></pre></div>
   </div>
-  <h2 class="post_heading perfect4">Transition all the things</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:transitions" id="goto:transitions">Transition all the things</a></h2>
   <p>Right now everything just sort of snaps from one state to another, so we’re going to add some smooth transitions to the folded corners and the lightbox:</p>
   <div class="post_code">
     <p class="code_title">CSS</p>
@@ -197,7 +205,7 @@
 <span class="p">}</span>
 </code></pre></div>
   </div>
-  <h2 class="post_heading perfect4">A background that knows its place</h2>
+  <h2 class="post_heading perfect4"><a href="#goto:positioned-background" id="goto:positioned-background">A background that knows its place</a></h2>
   <p>For some reason, we want the title of the highlight to be on a different background than the rest of it (now matter how long either of them is), but still have both backgrounds stretch to fill the whole screen. This is one way to do that.</p>
   <p>If you pull up one of the highlights in the <a href="../demos/24-highlights/" title="demo page: 24 Highlights">demo</a>, you’ll see the two different backgrounds. The semi-transparent blue one is the background of the whole lightbox. The light one is actually the background of a fixed pseudo-element, attached to the highlight’s content:</p>
   <div class="post_code">
@@ -214,22 +222,29 @@
 </code></pre></div>
   </div>
   <p class="post_note">Bonus points for semantics: none of that double-background business is apparent in the HTML—the markup is still just an <code>h2</code> followed by a <code>blockquote</code>.</p>
-  <h2 class="post_heading perfect4">The end</h2>
-  <p>Check out the <a href="../demos/24-highlights/" title="demo page: 24 Highlights">final result</a> or the <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="files for the finished page">files on GitHub</a>. Or, go back to <a href="/frontendings/24-highlights-part-1/" title="previous part of the article">Part 1</a>.</p>
+  <h2 class="post_heading perfect4"><a href="#goto:the-end" id="goto:the-end">The end</a></h2>
+  <div class="post_demo">
+    <a class="demo_link" href="../demos/24-highlights/" title="demo page: 24 Highlights">
+      <span><i class="icon-content-demo"></i> final result</span>
+    </a>
+  </div>
+  <p>Check out the <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="files for the finished page">files on GitHub</a>. Or, go back to <a href="/frontendings/24-highlights-part-1/" title="previous part of the article">Part 1</a>.</p>
 </div>
 
-<aside class="contentRelated">
+<aside class="post_related">
+  <p class="post_share"><a href="https://twitter.com/intent/tweet?text=24%20Highlights,%20Part%202%20by%20@nightpolly:%20http://nightpolly.com/frontendings/24-highlights-part-2/">Comment or share</a> <i class="icon-hi-twitter" aria-hidden="true"></i></p>
+
   <small class="post_meta">Written in <time class="meta_date" datetime="2013-12-22T11:14:00+02:00">December 2013</time> in <a class="meta_category" href="/frontendings">frontendings</a>. Just in time for Christmas.</small>
   <h2 class="post_heading major2">References</h2>
-  <h3 class="post_heading prime">In <cite>Some unimportant images</cite></h3>
-  <ul class="post_list post_list-unordered">
+  <h3 class="post_heading prime">In <cite>Some unimportant images</cite>:</h3>
+  <ul class="post_list addair">
     <li><cite><a href="http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/">Using CSS Sprites to optimize your website for Retina Displays</a></cite>—the sprite technique used above</li>
     <li><cite><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/resolution">&lt;resolution&gt;</a></cite>—Mozilla Developer Network</li>
     <li><cite><a href="http://www.w3.org/blog/CSS/2012/06/14/unprefix-webkit-device-pixel-ratio/">How to unprefix -webkit-device-pixel-ratio</a></cite>—CSS WG Blog</li>
     <li><cite><a href="http://www.quirksmode.org/blog/archives/2010/04/a_pixel_is_not.html">A pixel is not a pixel is not a pixel</a></cite>—on quirksmode.org</li>
   </ul>
-  <h3 class="post_heading prime">In <cite>Folded corners</cite></h3>
-  <ul class="post_list post_list-unordered">
+  <h3 class="post_heading prime">In <cite>Folded corners</cite>:</h3>
+  <ul class="post_list addair">
     <li><cite><a href="http://www.html5rocks.com/en/tutorials/masking/adobe/">CSS Masking</a></cite>—clipping and masking images with CSS and SVG</li>
     <li><cite><a href="http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/">Beveled corners &amp; negative border-radius with CSS3 gradients</a></cite>—by Lea Verou</li>
     <li><cite><a href="http://dev.w3.org/csswg/css-backgrounds-4/#border-corner-shape">The ‘border-corner-shape’ property</a></cite>—W3C Editor’s Draft</li>
@@ -237,27 +252,18 @@
 </aside>
 
   </article>
-
-  <footer class="container">
+  <footer class="contentinfo container" role="contentinfo">
   <nav class="nav-secondary" role="navigation">
-    <ul class="nav_list nav-secondary_list">
-      <li class="nav_item nav-secondary_item">
-        <a class="nav_link nav-secondary_link" href="/"><i class="icon icon-home" aria-hidden="true"></i> home</a>
-      </li>
-      <li class="nav_item nav-secondary_item">
-        <a class="nav_link nav-secondary_link" href="/frontendings"><i class="icon icon-frontendings" aria-hidden="true"></i> frontendings</a>
-      </li>
-      <li class="nav_item nav-secondary_item">
-        <a class="nav_link nav-secondary_link" href="/notes"><i class="icon icon-notes" aria-hidden="true"></i> notes</a>
-      </li>
+    <ul>
+      <li><a href="/"><i class="icon-main-home" aria-hidden="true"></i>home</a></li>
+      <li><a href="/frontendings"><i class="icon-main-frontendings" aria-hidden="true"></i>frontendings</a></li>
+      <li><a href="/notes"><i class="icon-main-notes" aria-hidden="true"></i>notes</a></li>
     </ul>
   </nav>
-  <div class="siteNotes">
-    <p class="minor2i">If you’re done here, come say hi on <a href="https://twitter.com/NightPolly" title="@nightpolly">Twitter</a>! Or <em>hi @ [mydomain]</em> if email is your thing.</p>
-    <p class="copyright">&copy; 2013. Standing on the shoulders of GitHub.</p>
-  </div>
+  <p class="contentinfo_etc">
+    <small class="contentinfo_copyright">&copy; 2014. Standing on the shoulders of GitHub.</small> &middot; <a href="https://twitter.com/NightPolly" title="@nightpolly">say hi! <i class="icon-hi-twitter" aria-hidden="true"></i></a> &middot; <a href="mailto:hi@nightpolly.com" title="hi@nightpolly.com">email <i class="icon-hi-email" aria-hidden="true"></i></a> &middot; <a href="/feed.xml" title="atom feed">new posts <i class="icon-hi-feed" aria-hidden="true"></i></a>
+  </p>
 </footer>
-
 
 </body>
 </html>
