@@ -1,0 +1,201 @@
+---
+layout: post
+title: Four-Point Typography
+type: frontendings
+date: 2014-04-04 02:16
+category: frontendings
+description: Organizing typography-related stuff into a handy Sass module.
+---
+
+<div class="post_entry addair">
+  <p class="post_lede">Here’s a way to approach responsive typography by getting the text’s <strong>size</strong>, <strong>proportion</strong>, <strong>measure</strong> (line length), and <strong>leading</strong> (line height) in order.</p>
+  <div class="post_demo">
+    <a class="demo_live btn" href="../demos/four-point-typography/" title="demo page: Four-Point Typography"><i class="icon-content-demo"></i> demo page</a>
+    <a class="demo_source" href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/four-point-typography" title="the source files on GitHub"><i class="icon-hi-github"></i> source</a>
+  </div>
+  <h2 class="post_heading perfect4"><a href="#goto:size" id="goto:size">Size</a></h2>
+  <p>Let’s begin by picking the base sizes, and thus deal with the majority of the text. There are a few things to consider—the typeface we use, for example—so it’s good to test some options (in the browser, please). The ol’ 16px browser default is a nice place to start.</p>
+  <p>Speaking of which, we’ll need that one later:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === default browser font-size, in px
+
+$default: 16;
+{% endhighlight %}
+  </div>
+  <p>For my <a href="../demos/four-point-typography/">test page</a> here I have three base sizes: 16px, 19px, and 23px—the wider the viewport, the bigger the number.</p>
+  <p>Note that none of the text will actually be set in pixels. The pixel values are just easy enough to imagine.</p>
+  <p>We’ll use media queries to detect the width of the viewport and change the font size accordingly. Three base sizes means at least two media queries. We can store them for later use as well:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === media queries
+
+$MQ-m: "screen and (min-width: 36.875em)"; // 590px
+$MQ-l: "screen and (min-width: 62em)"; // 992px
+{% endhighlight %}
+  </div>
+  <h2 class="post_heading perfect4"><a href="#goto:proportion" id="goto:proportion">Proportion</a></h2>
+  <h3 class="post_heading minor3">A multiscale</h3>
+  <p>I love this one. So here’s the idea: we have our main font-size values, now we need some bigger and smaller ones (I usually refer to <a href="http://modularscale.com/">Modular Scale</a> for that).</p>
+  <p>I don’t want to use a single scale though, I want different <em>proportions</em> for my font sizes. If my biggest size is 1.5 times the base size for narrow viewports, I want it 2.5 times the base for wide viewports (or something to that effect).</p>
+  <p class="post_note">Hat tip to Jason Pamental, who has explained the importance of proportion better than I ever could on <a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography" title="A More Modern Scale for Web Typography">Typecast’s blog</a>.</p>
+  <p>I’ve picked three scales for my example, each with nine font sizes in it. You can say they’re sort of parallel scales. Behold our multiscale:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === typographic multiscale (values in px)
+
+// scale 1     scale 2        scale 3
+
+// smaller than base:
+$s-2: 12;      $m-2: 14;      $l-2: 16;
+$s-1: 14;      $m-1: 16;      $l-1: 19;
+// base sizes:
+$S:   16;      $M:   19;      $L:   23;
+// bigger than base:
+$s1:  18;      $m1:  22;      $l1:  27;
+$s2:  20;      $m2:  25;      $l2:  32;
+$s3:  22;      $m3:  29;      $l3:  38;
+$s4:  24;      $m4:  33;      $l4:  44;
+$s5:  27;      $m5:  38;      $l5:  51;
+$s6:  30;      $m6:  44;      $l6:  59;
+{% endhighlight %}
+  </div>
+  <p>The naming is up to you of course. Above I’m using <code>$S</code>, <code>$M</code>, and <code>$L</code> for ‘Small’, ‘Medium’, and ‘Large’. The numbers indicate steps—positive (e.g. <code>$m1</code>) for sizes bigger than the base, and negative (e.g. <code>$m-1</code>) for smaller sizes.</p>
+  <p>We now have all our font sizes in this table-looking thing, so let’s see how we can use them.</p>
+  <h3 class="post_heading minor3">Rem and em</h3>
+  <p>As I mentioned, all those pixel values are not useful as they are. We’ll set the font size <em>in rem</em> for the main container of the text (such as the <code>body</code> element, or an article on the page), and <em>in em</em> for all the components inside it.</p>
+  <p>For the container, we divide the desired size by the default browser size (both as pixel values), and set the result in rem:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === main container sizes
+
+$base-s: #{$S/$default}rem; // 16 / 16 = 1rem
+$base-m: #{$M/$default}rem; // 19 / 16 = 1.1875rem
+$base-l: #{$L/$default}rem; // 23 / 16 = 1.4375rem
+{% endhighlight %}
+  </div>
+  <p>The math is similar for the inside components, only this time we divide the desired size by the <em>base size</em>, and the result will be in em:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === components sizes (scale 1)
+
+.M2-down { font-size: #{$s-2/$S}em; }
+.m2-down { font-size: #{$s-1/$S}em; }
+.m2-up   { font-size: #{$s1/$S}em; }
+.M2-up   { font-size: #{$s2/$S}em; }
+.m3-up   { font-size: #{$s3/$S}em; }
+.M3-up   { font-size: #{$s4/$S}em; }
+.P4-up   { font-size: #{$s5/$S}em; }
+.TT-up   { font-size: #{$s6/$S}em; }
+{% endhighlight %}
+  </div>
+  <p class="post_note">If you’re wondering what’s with the weird class names, this is just the system I use to remember the sizes—those are musical intervals.</p>
+  <p>As you can see, the various sizes are assigned to class names. We <em>could</em> use the HTML elements themselves (one size for all first-level headings, another for all second-level headings, and so on), and in certain cases that would be a good solution. Most of the time though, it’s too limiting.</p>
+  <p>Take the <a href="../demos/four-point-typography/">demo</a> for example: the third-level heading in the footer (“A few notes”) needs to be smaller than a third-level heading from the main entry (“Use in psychology”). Because of things like this I prefer to use classes—this way an <code>h1</code> and an <code>h3</code> could be the same size, and two <code>h1</code> elements could be different.</p>
+  <h3 class="post_heading minor3">For wider viewports</h3>
+  <p>We now have the components sizes in em, but this was just one of our scales. Remember those media query variables we wrote in the beginning?</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === components sizes (scale 2)
+
+@media #{$MQ-m} {
+  .M2-down { font-size: #{$m-2/$M}em; }
+  .m2-down { font-size: #{$m-1/$M}em; }
+  .m2-up   { font-size: #{$m1/$M}em; }
+  .M2-up   { font-size: #{$m2/$M}em; }
+  .m3-up   { font-size: #{$m3/$M}em; }
+  .M3-up   { font-size: #{$m4/$M}em; }
+  .P4-up   { font-size: #{$m5/$M}em; }
+  .TT-up   { font-size: #{$m6/$M}em; }
+}
+
+// === components sizes (scale 3)
+
+@media #{$MQ-l} {
+  .M2-down { font-size: #{$l-2/$L}em; }
+  .m2-down { font-size: #{$l-1/$L}em; }
+  .m2-up   { font-size: #{$l1/$L}em; }
+  .M2-up   { font-size: #{$l2/$L}em; }
+  .m3-up   { font-size: #{$l3/$L}em; }
+  .M3-up   { font-size: #{$l4/$L}em; }
+  .P4-up   { font-size: #{$l5/$L}em; }
+  .TT-up   { font-size: #{$l6/$L}em; }
+}
+{% endhighlight %}
+  </div>
+  <h2 class="post_heading perfect4"><a href="#goto:measure" id="goto:measure">Measure (line length)</a></h2>
+  <p>A well-chosen measure makes reading easier and more pleasant. Generally <a href="http://webtypography.net/2.1.2" title="Choose a comfortable measure, The Elements of Typographic Style Applied to the Web">66 characters per line is considered ideal</a>, so we’re shooting for a range of 45-75 characters.</p>
+  <p>Probably the easiest way to manage that is with a <code>max-width</code> in em. We’ll make a wee mixin to be used later on whichever element is our main container:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === measure (45-75 rule)
+
+@mixin column {
+  width: 90%;
+  max-width: 33em;
+  margin: 0 auto;
+}
+{% endhighlight %}
+  </div>
+  <h2 class="post_heading perfect4"><a href="#goto:leading" id="goto:leading">Leading (line height)</a></h2>
+  <p>Just as the measure, leading is important for readability. The two are closely connected—the longer the lines are, the bigger space between them we can afford.</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === leading
+
+$leading-s: 1.33;
+$leading-m: 1.45;
+$leading-l: 1.6;
+{% endhighlight %}
+  </div>
+  <p>Here we can also throw in some universal margins, to space out paragraphs, headings, and other elements:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+// === spacing
+
+$spacing-s: #{$leading-s}rem;
+$spacing-m: #{$leading-m}rem;
+$spacing-l: #{$leading-l}rem;
+{% endhighlight %}
+  </div>
+  <h2 class="post_heading perfect4"><a href="#goto:the-end" id="goto:the-end">The end</a></h2>
+  <p>And with that, we have our <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/four-point-typography/scss/partials/_typography.scss" title="_typography.scss">typography module</a>.</p>
+  <p>When you’re writing the rest of your styles, remember to refer to the variables in your main container:</p>
+  <div class="post_code">
+    <p class="code_title">SCSS</p>
+{% highlight scss %}
+.container {
+  @include column;
+  font-size: $base-s;
+  line-height: $leading-s;
+  @media #{$MQ-m} {
+    font-size: $base-m;
+    line-height: $leading-m;
+  }
+  @media #{$MQ-l} {
+    font-size: $base-l;
+    line-height: $leading-l;
+  }
+}
+{% endhighlight %}
+  </div>
+  <p>Hey, you made it to the end! I hope you found something useful here. I’m sure all of this can (and will) be improved, but today I’m okay with it. Thanks for reading.</p>
+  <div class="post_demo">
+    <a class="demo_live btn" href="../demos/four-point-typography/" title="demo page: Four-Point Typography"><i class="icon-content-demo"></i> demo page</a>
+    <a class="demo_source" href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/four-point-typography" title="the source files on GitHub"><i class="icon-hi-github"></i> source</a>
+  </div>
+</div>
+
+<aside class="post_related">
+  {% include post_share.html %}
+  <small class="post_meta">Written in <time class="meta_date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %Y" }}</time> in <a class="meta_category" href="/{{ page.category }}">{{ page.category }}</a>. If I had any sense I’d be asleep right now.</small>
+</aside>

@@ -1,0 +1,86 @@
+/* === Demo styles === */
+
+body {
+  background: #fff;
+}
+
+.container {
+  @include column;
+  font-family: "Hoefler Text", Georgia, serif;
+  font-size: $base-s;
+  line-height: $leading-s;
+  color: #3c3c3c;
+  @media #{$MQ-m} {
+    font-size: $base-m;
+    line-height: $leading-m;
+  }
+  @media #{$MQ-l} {
+    font-size: $base-l;
+    line-height: $leading-l;
+  }
+}
+
+a {
+  color: #3da6bd;
+  &:hover,
+  &:focus {
+    color: #268aa0;
+  }
+  &:active {
+    color: #ce2f3e;
+  }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-top: 4px solid #3c3c3c;
+}
+
+.sample-sizes > * {
+  margin: 0;
+}
+
+.sample-sizes,
+.sample-content h1,
+.sample-content h2,
+.sample-content h3,
+.sample-content h4,
+.sample-content h5,
+.sample-content h6,
+.sample-content p {
+  margin: $spacing-s 0;
+  @media #{$MQ-m} {
+    margin: $spacing-m 0;
+  }
+  @media #{$MQ-l} {
+    margin: $spacing-l 0;
+  }
+}
+
+.container .title,
+.container .subtitle {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.title > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.lead {
+  line-height: 1.4;
+}
+
+.sample-content > footer {
+  border-top: 2px solid #3c3c3c;
+}
+
+.ch45-75 {
+  background: rgba(#ce2f3e, .1);
+  color: #ce2f3e;
+}
