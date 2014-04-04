@@ -9,19 +9,15 @@ category: frontendings
 description: Making a lightbox with CSS&mdash;an experiment with :target and flexbox. Part 1 of 2.
 ---
 
-{% include post_header.html %}
-
 <div class="post_entry addair">
   <p class="post_lede">Everything we need to make a CSS-only lightbox is the <code>:target</code> pseudo-class. In addition, we also have CSS transitions and flexbox—to make everything look like creating it took no effort whatsoever.</p>
   <p>In the spirit of counting days in anticipation of Christmas, I went back to some of the books I read this year, pulled 24 highlighted passages, and arranged them into an Advent calendar. Or, you know, a bunch of squares with numbers in them.</p>
   <div class="post_demo">
-    <a class="demo_link" href="../demos/24-highlights/" title="demo page: 24 Highlights">
-      <img class="demo_img" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
-      <span><i class="icon-content-demo"></i> live demo</span>
-    </a>
+    <img class="demo_img" src="/frontendings/img/24-highlights-peek.jpg" alt="Screenshot of the final result">
+    <a class="demo_live btn" href="../demos/24-highlights/" title="demo page: 24 Highlights"><i class="icon-content-demo"></i> live demo</a>
+    <a class="demo_source" href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="the source files on GitHub"><i class="icon-hi-github"></i> source</a>
   </div>
   <p class="post_note">Fully supported in <a href="https://www.google.com/intl/en/chrome/browser/" title="download Google Chrome">Chrome</a> (31.0) and <a href="http://www.opera.com/" title="download Opera">Opera</a> (18.0). Works but isn’t pretty in the other major browsers. Doesn’t work in IE 8 and below.</p>
-  <p class="post_note">The source files are <a href="https://github.com/nightpolly/nightpolly.github.io/tree/master/frontendings/demos/24-highlights" title="files for the finished page">on GitHub</a>.</p>
   <p>Anyway, I enjoyed coding my little demo page, and I’ll try to break that down into steps. This is Part 1 of 2, and it’s mostly about how the lightboxes are going to work and the page’s structure.</p>
   <p>If you just want to see the (fairly modest) result from this part, I’ve put it in a <a href="../demos/24-highlights/part-1.html" title="final result from Part 1">separate page</a>.</p>
   <h2 class="post_heading perfect4"><a href="#goto:the-html" id="goto:the-html">The HTML</a></h2>
