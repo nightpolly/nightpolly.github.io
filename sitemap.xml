@@ -1,57 +1,258 @@
----
-layout: none
-changefreq: weekly
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>{{ site.url }}/</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <loc>http://nightpolly.com/</loc>
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  {% for post in site.posts %}
+  
   <url>
-    <loc>{{ site.url }}{{ post.url }}/</loc>
-    {% if post.lastmod %}
-    <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
-    {% elsif post.date %}
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    {% else %}
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    {% endif %}
-    {% if post.changefreq %}
-    <changefreq>{{ post.changefreq }}</changefreq>
-    {% else %}
+    <loc>http://nightpolly.com/frontendings/four-point-typography/</loc>
+    
+    <lastmod>2014-04-04T02:16:00+03:00</lastmod>
+    
+    
     <changefreq>monthly</changefreq>
-    {% endif %}
-    {% if post.sitemap.priority %}
-    <priority>{{ post.sitemap.priority }}</priority>
-    {% else %}
+    
+    
     <priority>0.7</priority>
-    {% endif %}
+    
   </url>
-  {% endfor %}
-  {% for page in site.pages %}
+  
   <url>
-    <loc>{{ site.url }}{{ page.url }}</loc>
-    {% if page.lastmod %}
-    <lastmod>{{ page.lastmod | date_to_xmlschema }}</lastmod>
-    {% elsif page.date %}
-    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
-    {% else %}
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    {% endif %}
-    {% if page.changefreq %}
-    <changefreq>{{ page.changefreq }}</changefreq>
-    {% else %}
+    <loc>http://nightpolly.com/notes/the-total-perspective-vortex/</loc>
+    
+    <lastmod>2013-12-31T22:20:00+02:00</lastmod>
+    
+    
     <changefreq>monthly</changefreq>
-    {% endif %}
-    {% if page.sitemap.priority %}
-    <priority>{{ page.sitemap.priority }}</priority>
-    {% else %}
-    <priority>0.5</priority>
-    {% endif %}
+    
+    
+    <priority>0.7</priority>
+    
   </url>
-  {% endfor %}
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/24-highlights-part-2/</loc>
+    
+    <lastmod>2013-12-22T11:14:00+02:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/24-highlights-part-1/</loc>
+    
+    <lastmod>2013-12-22T11:33:00+02:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/notes/live-a-little/</loc>
+    
+    <lastmod>2013-11-13T14:02:00+02:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/how-i-do-sublime-text-2/</loc>
+    
+    <lastmod>2013-12-28T23:15:00+02:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/notes/smartweb-bucharest/</loc>
+    
+    <lastmod>2013-11-13T14:38:00+02:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/notes/new-site/</loc>
+    
+    <lastmod>2013-09-23T17:33:00+03:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.7</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/installing-jekyll-on-windows/</loc>
+    
+    <lastmod>2013-09-17T22:15:00+03:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.7</priority>
+    
+  </url>
+  
+  
+  <url>
+    <loc>http://nightpolly.com/feed.xml</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>monthly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/demos/24-highlights/index.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>yearly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/demos/24-highlights/part-1.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>yearly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/demos/24-highlights/part-2.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>yearly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/demos/four-point-typography/index.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>yearly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/frontendings/index.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>weekly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/index.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>weekly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/notes/index.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>weekly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/sitemap.xml</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>weekly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://nightpolly.com/page2/index.html</loc>
+    
+    <lastmod>2014-04-04T11:35:07+03:00</lastmod>
+    
+    
+    <changefreq>weekly</changefreq>
+    
+    
+    <priority>0.5</priority>
+    
+  </url>
+  
 </urlset>
