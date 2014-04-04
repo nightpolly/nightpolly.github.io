@@ -7,6 +7,16 @@
     <atom:link href="http://nightpolly.com/feed.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Four-Point Typography</title>
+      
+      <description>Organizing typography-related stuff into a handy Sass module.</description>
+      
+      <pubDate>Fri, 04 Apr 2014 02:16:00 +0300</pubDate>
+      <link>http://nightpolly.com/frontendings/four-point-typography</link>
+      <guid isPermaLink="true">http://nightpolly.com/frontendings/four-point-typography</guid>
+    </item>
+    
+    <item>
       <title>The Total Perspective Vortex</title>
       
       <description>My personal year-end torture of choice.</description>
