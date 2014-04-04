@@ -1,4 +1,5 @@
 exclude: ["_scss", "_resources", "_drafts", "Rakefile"]
+include: ["_demo-*"]
 name: nightpolly.com
 url: http://nightpolly.com
 description: "Polly Ivanova&rsquo;s blog. Thoughts and front-end experiments published at times."
