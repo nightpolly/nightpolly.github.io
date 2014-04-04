@@ -6,3 +6,4 @@ markdown: redcarpet
 paginate: 5
 permalink: /:categories/:title
 pygments: true
+excerpt_separator: ""
